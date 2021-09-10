@@ -8,7 +8,7 @@ adddate() {
 
 ip=IP
 
-echo "Cluster IP: 20.69.169.201" >> adddate >> samsung.log
+echo "Cluster IP: $ip" >> adddate >> samsung.log
 echo "curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo'" >> adddate >> samsung.log
 curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo' >> samsung.json
 
