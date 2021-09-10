@@ -18,6 +18,7 @@ while [ $N -lt 1 ]
 do
    echo "curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo'" >> adddate >> samsung.log
    curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo' >> samsung.json
+   grep clusterState samsung.json >> adddate >> samsung.log
    if grep -o ACTIVE samsung.json
    then
    echo "Cluster state is ACTIVE !!" >> adddate >> samsung.log
