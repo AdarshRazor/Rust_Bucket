@@ -16,6 +16,7 @@ N=0
 echo "while [ $N -ne 1 ]" >> adddate >> samsung.log
 while [ $N -lt 1 ]
 do
+   rm samsung.json
    echo "curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo'" >> adddate >> samsung.log
    curl -X GET --header 'Accept: application/json' -k 'https://IP/api/serverInfo' >> samsung.json
    grep clusterState samsung.json >> adddate >> samsung.log
