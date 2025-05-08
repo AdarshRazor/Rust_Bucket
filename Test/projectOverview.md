@@ -30,7 +30,9 @@ I want to create a NextJS app and use Notion as a CMS to manage my content. I ju
 
 * [done] Implement it in the NextJS app 🔵
 
-* [] Create a page to display the data 🟠
+* [working] Create a page to display the data 🟠
+  - [done] fetch the data from the Notion database 
+  - [working] display the data in the page (in a better way)
 
 * [] Complete
 
