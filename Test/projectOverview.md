@@ -1,10 +1,4 @@
 # Creating CMS using Notion and Strapi - USing NextJS 
-### Please do not use my API >_<
-
-* [done] Add features to ease my work in streamlabs
-
-> 💡 Use replit or firebase studio to quickly achieve the something result.
-
 ## Project Overview
 I want to create a NextJS app and use Notion as a CMS to manage my content. I just want to display some simple data. Below are the steps i am working on to achieve this.
 
@@ -30,12 +24,17 @@ I want to create a NextJS app and use Notion as a CMS to manage my content. I ju
 
 * [done] Implement it in the NextJS app 🔵
 
-* [working] Create a page to display the data 🟠
+* [done] Create a page to display the data 🟠
   - [done] fetch the data from the Notion database 
-  - [working] display the data in the page (in a better way)
+  - [done] display the data in the page (in a better way)
 
-* [] Complete
+* [done] Complete 🎉🙌
 
+### Please do not use my API >_<
+
+* [done] Add features to ease my work in streamlabs
+
+> 💡 Use replit or firebase studio to quickly achieve the something result.
 
 ## Variables and Usefull stuffs
 
