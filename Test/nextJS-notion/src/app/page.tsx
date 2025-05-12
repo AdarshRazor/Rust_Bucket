@@ -12,6 +12,7 @@ export default function Home() {
       setPosts(data);
     };
     fetchData();
+    console.log("Completed !! Check Description for Github Link");
   }, []);
 
   return (

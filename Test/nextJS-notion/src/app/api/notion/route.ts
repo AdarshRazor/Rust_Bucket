@@ -16,3 +16,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   }
 } 
+
+
+// Post function to create a new post in Notion
+// use modal to create the new post - realTime
