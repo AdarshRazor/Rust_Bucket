@@ -1,7 +1,8 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const url = 'https://www.linkedin.com/jobs/search/?keywords=frontend%20developer&location=India&f_TPR=r86400&sortBy=DD';
+//Frontend Developer - 24 hrs last
+const url = 'https://www.linkedin.com/jobs/search/?currentJobId=4248218204&f_TPR=r86400&keywords=frontend%20developer&origin=JOB_SEARCH_PAGE_JOB_FILTER&refresh=true';
 
 (async () => {
   const browser = await puppeteer.launch({ headless: true });

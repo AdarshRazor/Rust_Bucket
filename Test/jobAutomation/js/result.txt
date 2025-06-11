@@ -1,8 +1,7 @@
-✅ Found 7 job links:
-1. https://in.linkedin.com/jobs/view/frontend-engineer-send-to-amazon-team-at-amazon-4139611080?position=1&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=nZoxoVrEKKkDFJLjQGwggA%3D%3D
-2. https://in.linkedin.com/jobs/view/angular-developer-at-chicmic-studios-4245101763?position=2&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=XKwZA85TwGZ98Ep5U%2BfQEA%3D%3D
-3. https://in.linkedin.com/jobs/view/frontend-developer-fresher-at-team-geek-solutions-4246241182?position=3&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=mTUqN5%2B4zN0DtE%2FsXwUfjg%3D%3D
-4. https://in.linkedin.com/jobs/view/front-end-email-developer-at-thermo-fisher-scientific-4230512515?position=4&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=iJGafSaMUtar99jTVhcNoQ%3D%3D
-5. https://in.linkedin.com/jobs/view/front-end-developers-ai-training-remote-at-braintrust-4220208768?position=5&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=ATtBYRKjpq9T04gCBGTHPQ%3D%3D
-6. https://in.linkedin.com/jobs/view/staff-software-engineer-front-end-core-data-at-google-4230600863?position=6&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=5oOyEX5NGRCUakBjQZ9ezA%3D%3D
-7. https://in.linkedin.com/jobs/view/associate-front-end-developer-at-bain-company-4245141647?position=7&pageNum=0&refId=5wdDDp%2FFo0hgU3RlMMOTMw%3D%3D&trackingId=tXpAZqo7Y6TZc9SP6rSo0Q%3D%3D
+1. https://www.linkedin.com/jobs/view/front-end-engineer-at-resonance-4248317972?position=1&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=U10suBVvU1OPSbaLV0muNA%3D%3D
+2. https://www.linkedin.com/jobs/view/front-end-software-developer-at-cleveland-cavaliers-4248332791?position=2&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=dWCepGitbvs24C58UkHP2Q%3D%3D
+3. https://www.linkedin.com/jobs/view/front-end-web-developer-at-lensa-4245453614?position=3&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=SJJipghVXI01ckHVX%2BSaeA%3D%3D
+4. https://www.linkedin.com/jobs/view/software-engineer-frontend-trainingpeaks-at-peaksware-holdings-llc-4248323535?position=4&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=FNzcfkrf%2Bnx4C2I42NW3Lw%3D%3D
+5. https://www.linkedin.com/jobs/view/remote-frontend-developer-at-lensa-4245455555?position=5&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=A4y73i7bTdvrE2E%2FQF9D%2BQ%3D%3D
+6. https://www.linkedin.com/jobs/view/frontend-developer-at-revenue3-4248239782?position=6&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=KX0Oo24KwNiCE7Ii0LI9Sg%3D%3D
+7. https://www.linkedin.com/jobs/view/front-end-developer-at-lensa-4245461033?position=7&pageNum=0&refId=dwBha%2Bj5NssFJ3Ufil0U0A%3D%3D&trackingId=TB%2FCZfi%2FfzncPMNcR%2BmLsw%3D%3D
