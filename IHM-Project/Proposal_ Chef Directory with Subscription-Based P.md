@@ -1,6 +1,28 @@
 # 🍳 Chef Directory with Subscription-Based Profile Access for IHM Gurukul
 
-## 🎯 Overview
+## TLDR: 
+
+### Adding wordpress plugins:
+* `Manage and Display` the sensetive data of chefs (Showcase their skills and cuisins)
+* `Resume Builder` for chefs
+
+### Plugins (🌟)
+- **Directory Plugin Options:**
+  - 🏆 Ultimate Member: Perfect for professional networks
+  - 🌟 `ProfilePress`: Known for stunning profile layouts
+  - 📱 `Business Directory Plugin`: Ideal for business-focused listings
+- **Top-tier Membership Plugins:**
+  - 💫 Paid Memberships Pro
+  - ⭐ `MemberPress`
+  - 🔒 Restrict User Access
+  - **Resume Builder Solution:**
+  - 💫 Resume Builder Pro
+  - ⭐ GravityView + PDF
+  - 🔒 `HM Resume Manager`
+
+
+
+## 🎯 Overview ( START )
 
 Welcome to an exciting opportunity to transform IHM Gurukul's digital presence! This innovative proposal introduces a dynamic chef directory platform that combines accessibility with premium content—think of it as LinkedIn meets MasterChef, but exclusively for culinary professionals! 
 
@@ -25,17 +47,17 @@ Our platform will showcase a curated network of `600+ culinary experts`, making 
 
 We'll implement a sophisticated directory system using industry-leading plugins:
 - **Directory Plugin Options:**
-  - 🏆 Ultimate Member: Perfect for professional networks
-  - 🌟 ProfilePress: Known for stunning profile layouts
-  - 📱 Business Directory Plugin: Ideal for business-focused listings
+  - 🏆 `Ultimate Member`: Perfect for professional networks
+  - 🌟 `ProfilePress`: Known for stunning profile layouts
+  - 📱 `Business Directory Plugin`: Ideal for business-focused listings
 
-### 2. 💳 Membership & Payment Integration
+### 2. 💳 Membership & Payment Integration 
 
 Our premium access system will be powered by:
 - **Top-tier Membership Plugins:**
-  - 💫 Paid Memberships Pro
-  - ⭐ MemberPress
-  - 🔒 Restrict User Access
+  - 💫 `Paid Memberships Pro`
+  - ⭐ `MemberPress`
+  - 🔒 `Restrict User Access`
 
 ### 3. 🛣️ The User Journey
 
@@ -44,7 +66,7 @@ Our premium access system will be powered by:
 3. **🔓 Upgrade:** Choose from flexible subscription plans
 4. **🌟 Unlock:** Access the full culinary network
 
-## 🎨 Recommended Plugin Combinations
+## 🎨 Recommended Plugin Combinations (🌟)
 
 | Directory Solution | Membership System | Why It's Perfect |
 | :-- | :-- | :-- |
@@ -134,12 +156,3 @@ Transform chef profiles into professional resumes with our integrated resume bui
 - PDF download statistics
 - User satisfaction with templates
 - Profile-to-resume conversion rate
-
-## 🎯 Summary
-
-Transform IHM Gurukul into India's premier culinary networking platform! Our solution combines professional-grade technology with an engaging user experience, creating a vibrant community where culinary talent meets opportunity. With the added resume builder feature, chefs can now not only showcase their profiles but also generate professional resumes with a single click!
-
----
-
-*Ready to revolutionize culinary networking in India? Let's create something extraordinary together!* 🚀
-
