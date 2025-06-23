@@ -14,60 +14,65 @@ The project is broken down into three main phases, with each phase building upon
 
 ### **Feature Set 1: Foundation & Historical Analysis (Phase 1)**
 
-*   **F1.1: Company Data Ingestion:**
-    *   Users can input a publicly traded company's ticker symbol (e.g., AAPL, GOOGL).
-    *   The system fetches 5-10 years of historical financial data from sources like `yfinance` and SEC EDGAR filings. This includes income statements, balance sheets, and cash flow statements.
+**F1.1: Company Data Ingestion:**
+*   Users can input a publicly traded company's ticker symbol (e.g., AAPL, GOOGL).
+*   The system fetches 5-10 years of historical financial data from sources like `yfinance` and SEC EDGAR filings. This includes income statements, balance sheets, and cash flow statements.
 
-*   **F1.2: Company Profile Dashboard:**
-    *   A dedicated page for the selected company displays a comprehensive profile.
-    *   **Business Summary:** A clear, concise overview of what the company does, its primary products/services, and its business model. (This can be sourced from APIs like Finnhub or scraped).
-    *   **Financial Performance Visualization:** Interactive charts (using `react-financial-charts`) displaying key metrics over time:
-        *   Revenue, Net Income, and Gross Profit.
-        *   Earnings Per Share (EPS).
-        *   Key growth rates (Revenue Growth, Earnings Growth).
-    *   **Investment History Analysis:** A section detailing historical investment performance, including dividend history, stock splits, and major capital expenditures.
-    *   **Automated Health Summary:** A generated text summary that interprets the financial data, highlighting strengths (e.g., "consistent revenue growth over 5 years") and weaknesses (e.g., "declining profit margins since 2021").
+    or
+
+*  Users can upload a CSV file containing historical financial data for a company. (The CSV should follow a predefined structure with columns for date, revenue, net income, EPS, etc.) [The more data, the better the analysis.]
+* This will help the system to analyze about the company history and inside out about the company and its financials.
+
+**F1.2: Company Profile Dashboard:**
+*   A dedicated page for the selected company displays a comprehensive profile.
+*   **Business Summary:** A clear, concise overview of what the company does, its primary products/services, and its business model. (This can be sourced from APIs like Finnhub or scraped).
+*   **Financial Performance Visualization:** Interactive charts (using `react-financial-charts`) displaying key metrics over time:
+    *   Revenue, Net Income, and Gross Profit.
+    *   Earnings Per Share (EPS).
+    *   Key growth rates (Revenue Growth, Earnings Growth).
+*   **Investment History Analysis:** A section detailing historical investment performance, including dividend history, stock splits, and major capital expenditures.
+*   **Automated Health Summary:** A generated text summary that interprets the financial data, highlighting strengths (e.g., "consistent revenue growth over 5 years") and weaknesses (e.g., "declining profit margins since 2021").
 
 ### **Feature Set 2: Real-Time Analysis & Competitive Intelligence (Phase 2)**
 
-*   **F2.1: Real-Time Market Integration:**
-    *   The platform will fetch and display real-time (or near real-time) stock prices and market data using APIs from Alpha Vantage or Finnhub.
-    *   Real-time data will be visualized using TradingView Lightweight Charts.
+**F2.1: Real-Time Market Integration:**
+*   The platform will fetch and display real-time (or near real-time) stock prices and market data using APIs from Alpha Vantage or Finnhub.
+*   Real-time data will be visualized using TradingView Lightweight Charts.
 
-*   **F2.2: Predictive Valuation Engine (⭐ Core Focus):**
-    *   The system uses historical financial and market data to train a predictive model (e.g., ARIMA, Prophet, or a simple ML model).
-    *   This model predicts the company's "intrinsic" or "expected" current value.
-    *   The dashboard will clearly display:
-        1.  **Actual Market Value:** The current stock price.
-        2.  **Predicted Value:** The value forecast by the model.
-        3.  **Prediction Error (%):** The percentage difference between actual and predicted values. This metric serves as an indicator of over/undervaluation according to the model.
+**F2.2: Predictive Valuation Engine (⭐ Core Focus):**
+*   The system uses historical financial and market data to train a predictive model (e.g., ARIMA, Prophet, or a simple ML model).
+*   This model predicts the company's "intrinsic" or "expected" current value.
+*   The dashboard will clearly display:
+    1.  **Actual Market Value:** The current stock price.
+    2.  **Predicted Value:** The value forecast by the model.
+    3.  **Prediction Error (%):** The percentage difference between actual and predicted values. This metric serves as an indicator of over/undervaluation according to the model.
 
-*   **F2.3: Market Ranking & Competitor Analysis:**
-    *   The system will identify key competitors within the same industry/sector.
-    *   It will display a comparative table or chart ranking the company and its competitors based on:
-        *   Market Capitalization.
-        *   Key financial ratios (P/E, P/S).
-        *   Our proprietary "Prediction Error" metric.
+**F2.3: Market Ranking & Competitor Analysis:**
+*   The system will identify key competitors within the same industry/sector.
+*   It will display a comparative table or chart ranking the company and its competitors based on:
+    *   Market Capitalization.
+    *   Key financial ratios (P/E, P/S).
+    *   Our proprietary "Prediction Error" metric.
 
-*   **F2.4: Strategic Retrospective Insights:**
-    *   Using the historical data and prediction model, the system will generate insights on past performance.
-    *   Example insight: "The company's value deviated negatively from predictions in Q3 2022, coinciding with a 20% increase in R&D spending that did not immediately translate to revenue growth. A more staggered investment approach could have maintained shareholder confidence." This may involve using FinBERT to analyze news sentiment from that period.
+**F2.4: Strategic Retrospective Insights:**
+*   Using the historical data and prediction model, the system will generate insights on past performance.
+*   Example insight: "The company's value deviated negatively from predictions in Q3 2022, coinciding with a 20% increase in R&D spending that did not immediately translate to revenue growth. A more staggered investment approach could have maintained shareholder confidence." This may involve using FinBERT to analyze news sentiment from that period.
 
 ### **Feature Set 3: Future Planning & Strategic Forecasting (Phase 3)**
 
-*   **F3.1: Future Plan Input:**
-    *   A user interface (e.g., a form or structured text input) where a user can input a company's stated future plans.
-    *   Examples: "Launching a new product line in Asia," "Acquiring a smaller competitor," "Investing $5B in AI research over 3 years."
+**F3.1: Future Plan Input:**
+*   A user interface (e.g., a form or structured text input) where a user can input a company's stated future plans.
+*   Examples: "Launching a new product line in Asia," "Acquiring a smaller competitor," "Investing $5B in AI research over 3 years."
 
-*   **F3.2: Future Value Projection:**
-    *   The predictive model will be enhanced to incorporate these qualitative future plans as quantitative inputs (e.g., estimating potential revenue streams or costs from the plan).
-    *   It will combine past performance (Phase 1), current market conditions (Phase 2), and future plans to project the company's value 1, 3, and 5 years into the future.
+**F3.2: Future Value Projection:**
+*   The predictive model will be enhanced to incorporate these qualitative future plans as quantitative inputs (e.g., estimating potential revenue streams or costs from the plan).
+*   It will combine past performance (Phase 1), current market conditions (Phase 2), and future plans to project the company's value 1, 3, and 5 years into the future.
 
-*   **F3.3: Strategic Recommendation Report:**
-    *   The system will generate a downloadable/viewable report that includes:
-        *   The future value projection with best-case, worst-case, and most-likely scenarios.
-        *   Strategic recommendations based on the analysis. Example: "Given the market's positive sentiment towards AI, accelerating the $5B investment could lead to a 15% higher valuation in 3 years, but carries a risk of short-term cash flow strain. We recommend securing a line of credit before proceeding."
-        *   A summary of supporting data and assumptions.
+**F3.3: Strategic Recommendation Report:**
+*   The system will generate a downloadable/viewable report that includes:
+    *   The future value projection with best-case, worst-case, and most-likely scenarios.
+    *   Strategic recommendations based on the analysis. Example: "Given the market's positive sentiment towards AI, accelerating the $5B investment could lead to a 15% higher valuation in 3 years, but carries a risk of short-term cash flow strain. We recommend securing a line of credit before proceeding."
+    *   A summary of supporting data and assumptions.
 
 ## 4. Technical Stack Summary
 *   **Frontend:** React, Next.js, react-financial-charts, TradingView Charts, Shadcn UI, Tailwind, Zustand
