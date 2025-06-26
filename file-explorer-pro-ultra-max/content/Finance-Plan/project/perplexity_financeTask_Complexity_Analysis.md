@@ -24,12 +24,12 @@ This distribution indicates that the Finance-Plan project involves substantial t
 
 | Task ID | Task Title | Complexity | Score | Expansion Command | Reasoning |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| T0.1 | Initialize Git repository and define branching strategy (main, dev) | Low | 1 | N/A | Basic setup/configuration task |
-| T0.2 | Setup Frontend: `create-next-app` with TypeScript, Tailwind, Shadcn | Medium | 4 | N/A | Standard development task |
-| T0.3 | Setup Backend: FastAPI project structure with virtual environment | Medium | 4 | N/A | Standard development task |
-| T0.4 | Setup Databases: Docker Compose for TimeScaleDB and Redis instances | Medium | 5 | N/A | Standard development task |
-| T0.5 | Define initial database schema for historical financial data in TimeScaleDB | High | 8 | expand_T0_5 | Involves advanced technical concepts |
-| T0.6 | Establish CI/CD pipeline for automated testing and deployment (e.g., GitHub Actions) | High | 6 | expand_T0_6 | Involves advanced technical concepts |
+| T0.1 | Initialize Git repository and define branching strategy (main, dev) ✔ | Low | 1 | N/A | Basic setup/configuration task |
+| T0.2 | Setup Frontend: `create-next-app` with TypeScript, Tailwind, Shadcn ✔ | Medium | 4 | N/A | Standard development task |
+| T0.3 | Setup Backend: FastAPI project structure with virtual environment ✔ | Medium | 4 | N/A | Standard development task |
+| T0.4 | Setup Databases: Docker Compose for TimeScaleDB and Redis instances ✔ | Medium | 5 | N/A | Standard development task |
+| T0.5 | Define initial database schema for historical financial data in TimeScaleDB ✔ | High | 8 | expand_T0_5 | Involves advanced technical concepts |
+| T0.6 | Establish CI/CD pipeline for automated testing and deployment (e.g., GitHub Actions) ✔ | High | 6 | expand_T0_6 | Involves advanced technical concepts |
 
 ### Phase 1: Foundation \& Prototype
 

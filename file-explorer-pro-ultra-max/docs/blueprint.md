@@ -1,4 +1,4 @@
-# **App Name**: File Explorer Pro
+# **App Name**: File Explorer Pro Ultra Max
 
 ## Core Features:
 

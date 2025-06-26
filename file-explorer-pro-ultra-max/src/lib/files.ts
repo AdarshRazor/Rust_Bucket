@@ -17,7 +17,7 @@ export type DirectoryNode = {
 export type TreeNode = FileNode | DirectoryNode;
 
 const contentDir = path.join(process.cwd(), 'content');
-const validExtensions = ['.md', '.pdf'];
+const validExtensions = ['.md', '.pdf', '.csv', '.json'];
 
 async function getTree(dir: string, relativePath: string): Promise<TreeNode[]> {
   const dirents = await fs.readdir(dir, { withFileTypes: true });

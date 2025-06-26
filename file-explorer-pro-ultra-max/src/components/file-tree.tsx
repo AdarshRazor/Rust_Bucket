@@ -8,6 +8,7 @@ import { Folder, FileText, File as FileIcon } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useColorModeStore } from '@/lib/color-mode-store';
 
 interface FileTreeProps {
   nodes: TreeNode[];
@@ -27,8 +28,22 @@ function getIcon(node: TreeNode) {
   return <FileIcon className="h-4 w-4" />;
 }
 
+// Helper to get color class based on folder level
+function getLevelColor(level: number) {
+  const colors = [
+    'text-blue-600', // root
+    'text-green-600', // 1st subfolder
+    'text-purple-600', // 2nd subfolder
+    'text-pink-600', // 3rd subfolder
+    'text-yellow-600', // 4th subfolder
+    'text-red-600', // 5th subfolder
+  ];
+  return colors[level % colors.length];
+}
+
 export function FileTree({ nodes, level = 0 }: FileTreeProps) {
   const pathname = usePathname();
+  const folderWise = useColorModeStore((state) => state.folderWise);
 
   const getActiveAccordionItems = React.useCallback((nodes: TreeNode[], currentPath: string): string[] => {
     let activeItems: string[] = [];
@@ -52,6 +67,7 @@ export function FileTree({ nodes, level = 0 }: FileTreeProps) {
       {nodes.map((node) => {
         const url = `/view/${node.path}`;
         const isActive = pathname === url;
+        const colorClass = folderWise ? getLevelColor(level) : undefined;
 
         if (node.type === 'directory') {
           return (
@@ -59,7 +75,7 @@ export function FileTree({ nodes, level = 0 }: FileTreeProps) {
               <AccordionTrigger className="py-1 px-2 rounded-md hover:bg-sidebar-accent text-sm justify-start">
                 <div className="flex items-center gap-2">
                   {getIcon(node)}
-                  <span className="truncate">{node.name}</span>
+                  <span className={cn('truncate', colorClass)}>{node.name}</span>
                 </div>
               </AccordionTrigger>
               <AccordionContent className="pb-0 pl-4">
@@ -77,12 +93,12 @@ export function FileTree({ nodes, level = 0 }: FileTreeProps) {
               size="sm"
               className={cn(
                 "w-full justify-start gap-2 px-2",
-                isActive && "bg-sidebar-accent text-sidebar-accent-foreground"
+                isActive && "bg-primary text-white font-bold ring-2 ring-primary ring-offset-2 ring-offset-sidebar-accent shadow-lg"
               )}
             >
               <Link href={url}>
                 {getIcon(node)}
-                <span className="truncate">{node.name}</span>
+                <span className={cn('truncate', colorClass)}>{node.name}</span>
               </Link>
             </Button>
           </li>

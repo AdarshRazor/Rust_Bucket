@@ -1,4 +1,4 @@
-# Welcome to File Explorer Pro!
+# Welcome to File Explorer Pro Ultra Max!
 
 This is a simple file explorer for your Markdown and PDF files.
 
@@ -11,6 +11,6 @@ This is a simple file explorer for your Markdown and PDF files.
 *   The sidebar on the left will automatically update to show your file tree.
 *   Click on a file to view its content here.
 
-Enjoy using File Explorer Pro!
+Enjoy using File Explorer Pro Ultra Max!
 
 ### Learn More

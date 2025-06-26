@@ -14,65 +14,60 @@ The project is broken down into three main phases, with each phase building upon
 
 ### **Feature Set 1: Foundation & Historical Analysis (Phase 1)**
 
-**F1.1: Company Data Ingestion:**
-*   Users can input a publicly traded company's ticker symbol (e.g., AAPL, GOOGL).
-*   The system fetches 5-10 years of historical financial data from sources like `yfinance` and SEC EDGAR filings. This includes income statements, balance sheets, and cash flow statements.
+*   **F1.1: Company Data Ingestion:**
+    *   Users can input a publicly traded company's ticker symbol (e.g., AAPL, GOOGL).
+    *   The system fetches 5-10 years of historical financial data from sources like `yfinance` and SEC EDGAR filings. This includes income statements, balance sheets, and cash flow statements.
 
-    or
-
-*  Users can upload a CSV file containing historical financial data for a company. (The CSV should follow a predefined structure with columns for date, revenue, net income, EPS, etc.) [The more data, the better the analysis.]
-* This will help the system to analyze about the company history and inside out about the company and its financials.
-
-**F1.2: Company Profile Dashboard:**
-*   A dedicated page for the selected company displays a comprehensive profile.
-*   **Business Summary:** A clear, concise overview of what the company does, its primary products/services, and its business model. (This can be sourced from APIs like Finnhub or scraped).
-*   **Financial Performance Visualization:** Interactive charts (using `react-financial-charts`) displaying key metrics over time:
-    *   Revenue, Net Income, and Gross Profit.
-    *   Earnings Per Share (EPS).
-    *   Key growth rates (Revenue Growth, Earnings Growth).
-*   **Investment History Analysis:** A section detailing historical investment performance, including dividend history, stock splits, and major capital expenditures.
-*   **Automated Health Summary:** A generated text summary that interprets the financial data, highlighting strengths (e.g., "consistent revenue growth over 5 years") and weaknesses (e.g., "declining profit margins since 2021").
+*   **F1.2: Company Profile Dashboard:**
+    *   A dedicated page for the selected company displays a comprehensive profile.
+    *   **Business Summary:** A clear, concise overview of what the company does, its primary products/services, and its business model. (This can be sourced from APIs like Finnhub or scraped).
+    *   **Financial Performance Visualization:** Interactive charts (using `react-financial-charts`) displaying key metrics over time:
+        *   Revenue, Net Income, and Gross Profit.
+        *   Earnings Per Share (EPS).
+        *   Key growth rates (Revenue Growth, Earnings Growth).
+    *   **Investment History Analysis:** A section detailing historical investment performance, including dividend history, stock splits, and major capital expenditures.
+    *   **Automated Health Summary:** A generated text summary that interprets the financial data, highlighting strengths (e.g., "consistent revenue growth over 5 years") and weaknesses (e.g., "declining profit margins since 2021").
 
 ### **Feature Set 2: Real-Time Analysis & Competitive Intelligence (Phase 2)**
 
-**F2.1: Real-Time Market Integration:**
-*   The platform will fetch and display real-time (or near real-time) stock prices and market data using APIs from Alpha Vantage or Finnhub.
-*   Real-time data will be visualized using TradingView Lightweight Charts.
+*   **F2.1: Real-Time Market Integration:**
+    *   The platform will fetch and display real-time (or near real-time) stock prices and market data using APIs from Alpha Vantage or Finnhub.
+    *   Real-time data will be visualized using TradingView Lightweight Charts.
 
-**F2.2: Predictive Valuation Engine (⭐ Core Focus):**
-*   The system uses historical financial and market data to train a predictive model (e.g., ARIMA, Prophet, or a simple ML model).
-*   This model predicts the company's "intrinsic" or "expected" current value.
-*   The dashboard will clearly display:
-    1.  **Actual Market Value:** The current stock price.
-    2.  **Predicted Value:** The value forecast by the model.
-    3.  **Prediction Error (%):** The percentage difference between actual and predicted values. This metric serves as an indicator of over/undervaluation according to the model.
+*   **F2.2: Predictive Valuation Engine (⭐ Core Focus):**
+    *   The system uses historical financial and market data to train a predictive model (e.g., ARIMA, Prophet, or a simple ML model).
+    *   This model predicts the company's "intrinsic" or "expected" current value.
+    *   The dashboard will clearly display:
+        1.  **Actual Market Value:** The current stock price.
+        2.  **Predicted Value:** The value forecast by the model.
+        3.  **Prediction Error (%):** The percentage difference between actual and predicted values. This metric serves as an indicator of over/undervaluation according to the model.
 
-**F2.3: Market Ranking & Competitor Analysis:**
-*   The system will identify key competitors within the same industry/sector.
-*   It will display a comparative table or chart ranking the company and its competitors based on:
-    *   Market Capitalization.
-    *   Key financial ratios (P/E, P/S).
-    *   Our proprietary "Prediction Error" metric.
+*   **F2.3: Market Ranking & Competitor Analysis:**
+    *   The system will identify key competitors within the same industry/sector.
+    *   It will display a comparative table or chart ranking the company and its competitors based on:
+        *   Market Capitalization.
+        *   Key financial ratios (P/E, P/S).
+        *   Our proprietary "Prediction Error" metric.
 
-**F2.4: Strategic Retrospective Insights:**
-*   Using the historical data and prediction model, the system will generate insights on past performance.
-*   Example insight: "The company's value deviated negatively from predictions in Q3 2022, coinciding with a 20% increase in R&D spending that did not immediately translate to revenue growth. A more staggered investment approach could have maintained shareholder confidence." This may involve using FinBERT to analyze news sentiment from that period.
+*   **F2.4: Strategic Retrospective Insights:**
+    *   Using the historical data and prediction model, the system will generate insights on past performance.
+    *   Example insight: "The company's value deviated negatively from predictions in Q3 2022, coinciding with a 20% increase in R&D spending that did not immediately translate to revenue growth. A more staggered investment approach could have maintained shareholder confidence." This may involve using FinBERT to analyze news sentiment from that period.
 
 ### **Feature Set 3: Future Planning & Strategic Forecasting (Phase 3)**
 
-**F3.1: Future Plan Input:**
-*   A user interface (e.g., a form or structured text input) where a user can input a company's stated future plans.
-*   Examples: "Launching a new product line in Asia," "Acquiring a smaller competitor," "Investing $5B in AI research over 3 years."
+*   **F3.1: Future Plan Input:**
+    *   A user interface (e.g., a form or structured text input) where a user can input a company's stated future plans.
+    *   Examples: "Launching a new product line in Asia," "Acquiring a smaller competitor," "Investing $5B in AI research over 3 years."
 
-**F3.2: Future Value Projection:**
-*   The predictive model will be enhanced to incorporate these qualitative future plans as quantitative inputs (e.g., estimating potential revenue streams or costs from the plan).
-*   It will combine past performance (Phase 1), current market conditions (Phase 2), and future plans to project the company's value 1, 3, and 5 years into the future.
+*   **F3.2: Future Value Projection:**
+    *   The predictive model will be enhanced to incorporate these qualitative future plans as quantitative inputs (e.g., estimating potential revenue streams or costs from the plan).
+    *   It will combine past performance (Phase 1), current market conditions (Phase 2), and future plans to project the company's value 1, 3, and 5 years into the future.
 
-**F3.3: Strategic Recommendation Report:**
-*   The system will generate a downloadable/viewable report that includes:
-    *   The future value projection with best-case, worst-case, and most-likely scenarios.
-    *   Strategic recommendations based on the analysis. Example: "Given the market's positive sentiment towards AI, accelerating the $5B investment could lead to a 15% higher valuation in 3 years, but carries a risk of short-term cash flow strain. We recommend securing a line of credit before proceeding."
-    *   A summary of supporting data and assumptions.
+*   **F3.3: Strategic Recommendation Report:**
+    *   The system will generate a downloadable/viewable report that includes:
+        *   The future value projection with best-case, worst-case, and most-likely scenarios.
+        *   Strategic recommendations based on the analysis. Example: "Given the market's positive sentiment towards AI, accelerating the $5B investment could lead to a 15% higher valuation in 3 years, but carries a risk of short-term cash flow strain. We recommend securing a line of credit before proceeding."
+        *   A summary of supporting data and assumptions.
 
 ## 4. Technical Stack Summary
 *   **Frontend:** React, Next.js, react-financial-charts, TradingView Charts, Shadcn UI, Tailwind, Zustand
@@ -96,23 +91,23 @@ Here is the **TODO File** to guide the development of the entire project.
 
 ### Phase 0: Project Setup & Core Infrastructure
 
-| ID | Task | Status | Priority | Dependency |
-| :--- | :--- | :--- | :--- | :--- |
-| T0.1 | Initialize Git repository and define branching strategy (main, dev). | Not Started | High | - |
-| T0.2 | Setup Frontend: `create-next-app` with TypeScript, Tailwind, Shadcn. | Not Started | High | T0.1 |
-| T0.3 | Setup Backend: FastAPI project structure with virtual environment. | Not Started | High | T0.1 |
-| T0.4 | Setup Databases: Docker Compose for TimeScaleDB and Redis instances. | Not Started | High | T0.1 |
-| T0.5 | Define initial database schema for historical financial data in TimeScaleDB. | Not Started | High | T0.4 |
-| T0.6 | Establish CI/CD pipeline for automated testing and deployment (e.g., GitHub Actions). | Not Started | Medium | T0.2, T0.3 |
+| ID | Task | Status | Priority | Dependency | Comments |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| T0.1 | Initialize Git repository and define branching strategy (main, dev). | ✅ Completed | High | - | main, dev(development) |
+| T0.2 | Setup Frontend: `create-next-app` with TypeScript, Tailwind, Shadcn. | ✅ Completed | High | T0.1 | `client` folder |
+| T0.3 | Setup Backend: FastAPI project structure with virtual environment. | ✅ Completed | High | T0.1 | `server` folder |
+| T0.4 | Setup Databases: Docker Compose for TimeScaleDB and Redis instances. | ✅ Completed | High | T0.1 | `server/docker-compose.yml` |
+| T0.5 | Define initial database schema for historical financial data in docker:timescaledb. | ✅ Completed | High | T0.4 | `server/db/init_timescaledb2.sql` |
+| T0.6 | Establish CI/CD pipeline for automated testing and deployment (e.g., GitHub Actions). | ✅ Completed | Medium | T0.2, T0.3 | `github/workflows/ci-cd.yml` |
 
 ### Phase 1: Foundation & Prototype
 
-| ID | Task | Status | Priority | Dependency |
-| :--- | :--- | :--- | :--- | :--- |
-| T1.1 | **Backend:** Create a data ingestion script using `yfinance` to fetch historical data. | Not Started | High | T0.3 |
-| T1.2 | **Backend:** Store fetched historical data into TimeScaleDB. | Not Started | High | T0.5, T1.1 |
+| ID | Task | Status | Priority | Dependency | Comments |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| T1.1 | **Backend:** Create a data ingestion script using `yfinance` to fetch historical data. | ✅ Completed | High | T0.3 | `server/app/data/yFinance.py` |
+| T1.2 | **Backend:** Store fetched historical data into docker:timescaledb | ✅ Completed | High | T0.5, T1.1 | `server/app/data/result2timescale.py` |
 | T1.3 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/profile` for company info. | Not Started | High | T0.3 |
-| T1.4 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/financials` for historical data. | Not Started | High | T1.2 |
+| T1.4 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/financials` for historical data. | ✅ Completed | High | T1.2 | `localhost:8000/yfinance/fetch?` |
 | T1.5 | **Frontend:** Build the main layout, header, and a company search bar component. | Not Started | High | T0.2 |
 | T1.6 | **Frontend:** Create the Company Profile Dashboard page structure. | Not Started | High | T1.5 |
 | T1.7 | **Frontend:** Integrate `react-financial-charts` to visualize revenue, profit, etc. | Not Started | High | T1.6 |
@@ -155,3 +150,15 @@ Here is the **TODO File** to guide the development of the entire project.
 | T3.9 | **Integration:** Deploy the final v3 of the project. | Not Started | High | T3.7 |
 
 ---
+
+### Things to Keep in Mind : !IMPORTANT!
+
+While providing the SubTask or any help, please keep in mind the following:
+
+* Not make assumptions about compatibility or safety, always research and provide the latest code, modules, libraries or anything that is needed for the task. (do not look for outdated or deprecated code, !IMPORTANT!)
+* Research the actual latest versions before suggesting any dependencies
+* Only provide the specific code needed for the current task, instead of providing the whole code and install all the dependencies.
+* Explain the logic behind any code I suggest, so I can understand the code and the logic behind it.
+* Keep the code clean and readable.
+* Check the dependencies and the codebase before providing the SubTask or any help, so it wont break the code.
+* Follow your explicit instructions in the PRD, so I can understand the task and the instructions.
