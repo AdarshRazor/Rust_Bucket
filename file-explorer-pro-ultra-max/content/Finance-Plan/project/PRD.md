@@ -106,12 +106,12 @@ Here is the **TODO File** to guide the development of the entire project.
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | T1.1 | **Backend:** Create a data ingestion script using `yfinance` to fetch historical data. | ✅ Completed | High | T0.3 | `server/app/data/yFinance.py` |
 | T1.2 | **Backend:** Store fetched historical data into docker:timescaledb | ✅ Completed | High | T0.5, T1.1 | `server/app/data/result2timescale.py` |
-| T1.3 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/profile` for company info. | Not Started | High | T0.3 |
-| T1.4 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/financials` for historical data. | ✅ Completed | High | T1.2 | `localhost:8000/yfinance/fetch?` |
-| T1.5 | **Frontend:** Build the main layout, header, and a company search bar component. | Not Started | High | T0.2 |
-| T1.6 | **Frontend:** Create the Company Profile Dashboard page structure. | Not Started | High | T1.5 |
-| T1.7 | **Frontend:** Integrate `react-financial-charts` to visualize revenue, profit, etc. | Not Started | High | T1.6 |
-| T1.8 | **Frontend:** Connect dashboard to backend API (`/financials`) to display data. | Not Started | High | T1.4, T1.7 |
+| T1.3 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/profile` for company info. | ✅ Completed | High | T0.3 | `server/app/services/company_service.py` |
+| T1.4 | **Backend:** Develop FastAPI endpoint `GET /api/company/{ticker}/financials` for historical data. | ✅ Completed | High | T1.2 | `localhost:8000/yfinance/fetch?`, This will fetch yfinance data from the database and return it to the frontend. |
+| T1.5 | **Frontend:** Build the main layout, header, and a company search bar component. | ✅ Completed | High | T0.2 | `client/src/app/dashboard/page.tsx` |
+| T1.6 | **Frontend:** Create the Company Profile Dashboard page structure. | ✅ Completed | High | T1.5 | `client/src/app/dashboard/page.tsx` |
+| T1.7 | **Frontend:** Integrate `react-financial-charts` to visualize revenue, profit, etc. | ✅ Completed | High | T1.6 | `client/src/components/FinancialChart.tsx` |
+| T1.8 | **Frontend:** Connect dashboard to backend API (`/financials`) to display data. | ✅ Completed | High | T1.4, T1.7 | `client/src/app/financials/page.tsx` |
 | T1.9 | **Backend:** Implement basic caching with Redis for the API endpoints. | Not Started | Medium | T1.4 |
 | T1.10 | **Backend:** Implement a basic text generation function for the "Health Summary". | Not Started | Medium | T1.4 |
 | T1.11 | **Integration:** Deploy a live v1 prototype. | Not Started | High | T1.8, T1.10 |
