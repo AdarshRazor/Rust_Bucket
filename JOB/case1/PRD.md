@@ -72,9 +72,9 @@ This initial phase focuses on setting up the development environment, version co
 
 | Task ID | Task Description | Status | Priority | Dependency |
 | :--- | :--- | :--- | :--- | :--- |
-| 1.1 | Initialize public GitHub repository: `FullStackExam<yourname><date>` | Not Started | High | - |
-| 1.2 | Set up Node.js + Express project with TypeScript support | Not Started | High | 1.1 |
-| 1.3 | Create MVC folder structure (`/controllers`, `/models`, `/routes`) | Not Started | High | 1.2 |
+| 1.1 | Initialize public GitHub repository: `FullStackExam<yourname><date>` | Completed | High | - |
+| 1.2 | Set up Node.js + Express project with TypeScript support | Completed | High | 1.1 |
+| 1.3 | Create MVC folder structure (`/controllers`, `/models`, `/routes`) | Completed | High | 1.2 |
 | 1.4 | Set up PostgreSQL/MySQL database and get connection credentials | Not Started | High | - |
 | 1.5 | Set up MongoDB database and get connection credentials | Not Started | High | - |
 | 1.6 | Implement database connection logic for both SQL and MongoDB | Not Started | High | 1.4, 1.5 |
@@ -87,13 +87,13 @@ This phase involves defining the data structures and implementing the core user 
 
 | Task ID | Task Description | Status | Priority | Dependency |
 | :--- | :--- | :--- | :--- | :--- |
-| 2.1 | Define and create SQL schema: `users`, `orders`, `order_items` | Not Started | High | 1.4 |
-| 2.2 | Create SQL models: `User.js`, `Order.js`, `OrderItem.js` | Not Started | High | 2.1 |
-| 2.3 | Create MongoDB model: `Product.js` | Not Started | High | 1.5 |
-| 2.4 | Implement user registration logic with bcrypt password hashing | Not Started | High | 2.2 |
-| 2.5 | Implement user login logic and JWT/session generation | Not Started | High | 2.4 |
-| 2.6 | Create `AuthController.ts` and `authRoutes.ts` | Not Started | High | 2.5 |
-| 2.7 | Create authentication middleware to protect routes | Not Started | High | 2.5 |
+| 2.1 | Define and create SQL schema: `users`, `orders`, `order_items` | Completed | High | 1.4 |
+| 2.2 | Create SQL models: `User.js`, `Order.js`, `OrderItem.js` | Completed | High | 2.1 |
+| 2.3 | Create MongoDB model: `Product.js` | Completed | High | 1.5 |
+| 2.4 | Implement user registration logic with bcrypt password hashing | Completed | High | 2.2 |
+| 2.5 | Implement user login logic and JWT/session generation | Completed | High | 2.4 |
+| 2.6 | Create `AuthController.ts` and `authRoutes.ts` | Completed | High | 2.5 |
+| 2.7 | Create authentication middleware to protect routes | Completed | High | 2.5 |
 
 ---
 
@@ -102,18 +102,18 @@ In this phase, all core e-commerce API endpoints for products, cart, orders, and
 
 | Task ID | Task Description | Status | Priority | Dependency |
 | :--- | :--- | :--- | :--- | :--- |
-| 3.1 | Create `ProductController.ts` for product CRUD operations | Not Started | High | 2.3 |
-| 3.2 | Implement search/filter logic in `ProductController` (MongoDB aggregation) | Not Started | Medium | 3.1 |
-| 3.3 | Implement pagination for product listing endpoint | Not Started | Medium | 3.1 |
-| 3.4 | Create `productRoutes.ts` and wire to controller | Not Started | High | 3.1 |
-| 3.5 | Create `CartController.ts` for adding/removing items | Not Started | High | 2.7, 3.1 |
-| 3.6 | Create `cartRoutes.ts` and protect with auth middleware | Not Started | High | 3.5 |
-| 3.7 | Create `OrderController.ts` for checkout and order history | Not Started | High | 2.2, 3.5 |
-| 3.8 | Implement checkout logic (create order in SQL, clear cart) | Not Started | High | 3.7 |
-| 3.9 | Create `orderRoutes.ts` and protect with auth middleware | Not Started | High | 3.8 |
-| 3.10 | Implement advanced SQL query for report (e.g., daily revenue) | Not Started | Medium | 2.2 |
-| 3.11 | Implement MongoDB aggregation for report (e.g., sales by category) | Not Started | Medium | 2.3 |
-| 3.12 | Create `ReportController.ts` and `reportRoutes.ts` | Not Started | Medium | 3.10, 3.11|
+| 3.1 | Create `ProductController.ts` for product CRUD operations | Completed | High | 2.3 |
+| 3.2 | Implement search/filter logic in `ProductController` (MongoDB aggregation) | Completed | Medium | 3.1 |
+| 3.3 | Implement pagination for product listing endpoint | Completed | Medium | 3.1 |
+| 3.4 | Create `productRoutes.ts` and wire to controller | Completed | High | 3.1 |
+| 3.5 | Create `CartController.ts` for adding/removing items | Completed | High | 2.7, 3.1 |
+| 3.6 | Create `cartRoutes.ts` and protect with auth middleware | Completed | High | 3.5 |
+| 3.7 | Create `OrderController.ts` for checkout and order history | Completed | High | 2.2, 3.5 |
+| 3.8 | Implement checkout logic (create order in SQL, clear cart) | Completed | High | 3.7 |
+| 3.9 | Create `orderRoutes.ts` and protect with auth middleware | Completed | High | 3.8 |
+| 3.10 | Implement advanced SQL query for report (e.g., daily revenue) | Completed | Medium | 2.2 |
+| 3.11 | Implement MongoDB aggregation for report (e.g., sales by category) | Completed | Medium | 2.3 |
+| 3.12 | Create `ReportController.ts` and `reportRoutes.ts` | Completed | Medium | 3.10, 3.11|
 
 ---
 
@@ -122,12 +122,12 @@ This phase covers the setup of the Next.js front end and the creation of the pri
 
 | Task ID | Task Description | Status | Priority | Dependency |
 | :--- | :--- | :--- | :--- | :--- |
-| 4.1 | Initialize Next.js project with TypeScript | Not Started | High | - |
-| 4.2 | Set up basic UI components (Navbar, Footer, ProductCard) | Not Started | High | 4.1 |
-| 4.3 | Create Product Listing Page (`/pages/index.tsx`) | Not Started | High | 4.2 |
-| 4.4 | Implement SSR (`getServerSideProps`) to fetch products | Not Started | High | 3.4, 4.3 |
-| 4.5 | Create dynamic Product Detail Page (`/pages/products/[id].tsx`) | Not Started | High | 4.2 |
-| 4.6 | Fetch single product data for the detail page | Not Started | High | 3.4, 4.5 |
+| 4.1 | Initialize Next.js project with TypeScript | Completed | High | - |
+| 4.2 | Set up basic UI components (Navbar, Footer, ProductCard) | Completed | High | 4.1 |
+| 4.3 | Create Product Listing Page (`/pages/index.tsx`) | Completed | High | 4.2 |
+| 4.4 | Implement SSR (`getServerSideProps`) to fetch products | Completed | High | 3.4, 4.3 |
+| 4.5 | Create dynamic Product Detail Page (`/pages/products/[id].tsx`) | Completed | High | 4.2 |
+| 4.6 | Fetch single product data for the detail page | Completed | High | 3.4, 4.5 |
 
 ---
 
@@ -137,7 +137,7 @@ Here, the front end is connected to the back-end APIs to create a fully interact
 | Task ID | Task Description | Status | Priority | Dependency |
 | :--- | :--- | :--- | :--- | :--- |
 | 5.1 | Create pages and forms for User Registration and Login | Not Started | High | 2.6 |
-| 5.2 | Implement state management for authentication (e.g., Context API) | Not Started | High | 5.1 |
+| 5.2 | Implement state management for authentication (e.g., Zustand) | Not Started | High | 5.1 |
 | 5.3 | Connect "Add to Cart" button to the cart API endpoint | Not Started | High | 3.6, 4.6 |
 | 5.4 | Create Cart Page to display items and total | Not Started | High | 5.3 |
 | 5.5 | Implement Checkout Flow, calling the order creation endpoint | Not Started | High | 3.9, 5.4 |
