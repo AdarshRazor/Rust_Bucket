@@ -91,17 +91,17 @@ This TODO list breaks down the entire project into manageable tasks, organized b
 | 1.3 | Create a formal risk assessment document based on legal findings | Not Started | High | 1.1 |
 | 1.4 | **Go/No-Go Decision:** Based on legal review and risk assessment, formally decide whether to proceed | Not Started | **Critical** | 1.3 |
 | **Phase 2: Proof of Concept (PoC) Development (Assuming "Go" Decision)** |
-| 2.1 | **Scraper Service:** Basic Selenium setup to open a browser and navigate to a LinkedIn search URL | Not Started | High | 1.4 |
-| 2.2 | **Scraper Service:** Implement logic for dynamic "infinite" scrolling | Not Started | High | 2.1 |
-| 2.3 | **Scraper Service:** Implement `WebDriverWait` for handling lazy-loaded content | Not Started | High | 2.2 |
-| 2.4 | **Parser Service:** Develop and test robust regex for email extraction | Not Started | High | 2.3 |
-| 2.5 | **Parser Service:** Integrate parser logic to extract emails from the scraper's page source | Not Started | High | 2.4 |
-| 2.6 | **Data Storage Service:** Implement logic to save extracted data (email + metadata) to a CSV file | Not Started | High | 2.5 |
-| 2.7 | **Data Storage Service:** Implement in-memory or file-based deduplication | Not Started | Medium | 2.6 |
-| 2.8 | **Evasion (Basic):** Implement randomized delays (`time.sleep`) between actions (scrolls, page loads) | Not Started | High | 2.2 |
-| 2.9 | **Evasion (Basic):** Implement basic user-agent rotation | Not Started | High | 2.1 |
-| 2.10 | **Orchestrator:** Create main script to tie all PoC components together (input query, run scraper, save data) | Not Started | High | 2.7, 2.9 |
-| 2.11 | **Testing:** Test PoC on a small, defined target (e.g., scrape 10 emails) | Not Started | High | 2.10 |
+| 2.1 | **Scraper Service:** Basic Selenium setup to open a browser and navigate to a LinkedIn search URL | Completed | High | 1.4 |
+| 2.2 | **Scraper Service:** Implement logic for dynamic "infinite" scrolling | Completed | High | 2.1 |
+| 2.3 | **Scraper Service:** Implement `WebDriverWait` for handling lazy-loaded content | Completed | High | 2.2 |
+| 2.4 | **Parser Service:** Develop and test robust regex for email extraction | Completed | High | 2.3 |
+| 2.5 | **Parser Service:** Integrate parser logic to extract emails from the scraper's page source | Completed | High | 2.4 |
+| 2.6 | **Data Storage Service:** Implement logic to save extracted data (email + metadata) to a CSV file | Completed | High | 2.5 |
+| 2.7 | **Data Storage Service:** Implement in-memory or file-based deduplication | Completed | Medium | 2.6 |
+| 2.8 | **Evasion (Basic):** Implement randomized delays (`time.sleep`) between actions (scrolls, page loads) | Completed | High | 2.2 |
+| 2.9 | **Evasion (Basic):** Implement basic user-agent rotation | Completed | High | 2.1 |
+| 2.10 | **Orchestrator:** Create main script to tie all PoC components together (input query, run scraper, save data) | Completed | High | 2.7, 2.9 |
+| 2.11 | **Testing:** Test PoC on a small, defined target (e.g., scrape 10 emails) | Completed | High | 2.10 |
 | **Phase 3: Incremental Scaling & Hardening** |
 | 3.1 | **Proxy Management Service:** Research and integrate a residential proxy provider API | Not Started | **Critical** | 2.11 |
 | 3.2 | **Proxy Management Service:** Implement robust IP rotation logic for each request or session | Not Started | **Critical** | 3.1 |
@@ -119,3 +119,5 @@ This TODO list breaks down the entire project into manageable tasks, organized b
 | 4.3 | **Maintenance:** Schedule periodic reviews of LinkedIn's HTML structure and CSS selectors to preemptively fix the scraper | Not Started | High | Ongoing |
 | 4.4 | **Maintenance:** Continuously research and test new anti-detection techniques | Not Started | High | Ongoing |
 | 4.5 | **Data Quality:** Implement a post-processing script to validate data quality and format | Not Started | Medium | 3.10 |
+
+**Note:** Phase 2.1 through 2.11 are implemented and tested via `main.py` and `scraper.py`.
