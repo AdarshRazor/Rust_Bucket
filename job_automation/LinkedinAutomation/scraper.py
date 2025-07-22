@@ -16,6 +16,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 import os
 from dotenv import load_dotenv
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 
 # --- Configuration ---
 # LINKEDIN_SEARCH_URL = "https://www.linkedin.com/search/results/content/?keywords=Hiring%20Full%20Stack&origin=SWITCH_SEARCH_VERTICAL&location=India"
@@ -173,6 +174,42 @@ def build_linkedin_search_url(query, location):
     params += "&origin=SWITCH_SEARCH_VERTICAL"
     return base_url + params
 
+def set_sort_to_latest(driver):
+    """
+    Sets the LinkedIn search results to sort by 'Latest' (not 'Top match').
+    Prints all visible options for debugging and uses ActionChains to click 'Latest'.
+    Saves page source for inspection if it fails.
+    """
+    try:
+        # Wait for the sort dropdown to be present and click it
+        sort_button = WebDriverWait(driver, 15).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[contains(., 'Sort by')]"))
+        )
+        driver.execute_script("arguments[0].scrollIntoView(true);", sort_button)
+        print("Clicking sort dropdown...")
+        sort_button.click()
+        time.sleep(2)  # Give the dropdown time to render
+
+        # Print all visible dropdown options for debugging
+        options = driver.find_elements(By.XPATH, "//span[contains(text(), 'Top match') or contains(text(), 'Latest')]")
+        print("Sort options found:")
+        for opt in options:
+            print("-", opt.text)
+
+        # Try to click 'Latest' option
+        latest_option = WebDriverWait(driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, "//span[text()='Latest']"))
+        )
+        ActionChains(driver).move_to_element(latest_option).click(latest_option).perform()
+        print("Set sort order to 'Latest'.")
+        time.sleep(2)  # Wait for results to refresh
+    except Exception as e:
+        print(f"Could not set sort order to 'Latest': {e}")
+        # Print page source for debugging
+        with open('debug_sort_page.html', 'w', encoding='utf-8') as f:
+            f.write(driver.page_source)
+        print("Saved current page source to debug_sort_page.html for inspection.")
+
 def run_scraper(query="Hiring Full Stack", location="India", target=10, max_scrolls=20):
     """
     Orchestrates the scraping process with given parameters.
@@ -192,6 +229,7 @@ def run_scraper(query="Hiring Full Stack", location="India", target=10, max_scro
         time.sleep(pre_load_delay)
         driver.get(search_url)
         time.sleep(5)  # Wait for page to load (adjust as needed)
+        set_sort_to_latest(driver)
         print("Page loaded. Starting infinite scroll...")
         infinite_scroll(driver, max_scrolls=max_scrolls, scroll_pause=2, randomize_delay=True)
         print("Scrolling complete. Extracting emails from posts...")
