@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  backend:
+    build: ./server
+    container_name: mira-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./server:/app/server
+      - ./docs:/app/docs
+    restart: unless-stopped
+  frontend:
+    image: node:18
+    container_name: mira-frontend
+    working_dir: /app
+    volumes:
+      - ./client:/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - backend
+    restart: unless-stopped
+# Both services are on the default network and can communicate via service name (e.g., 'backend:8000') 
