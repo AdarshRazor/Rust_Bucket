@@ -1,0 +1,7 @@
+pandas
+langchain
+langsmith
+langchain[google-genai]
+python-dotenv
+openpyxl
+odfpy

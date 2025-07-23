@@ -1,4 +1,4 @@
-# LinkedIn Email Scraping Automation
+# LinkedIn Email Scraping Automation Pro Max Ultra ++
 
 ## ⚠️ Legal Disclaimer
 
@@ -45,7 +45,7 @@ This project automates the extraction of email addresses from recent LinkedIn po
    ```
 4. **Run the scraper:**
    ```bash
-   python main.py --query "Hiring Full Stack" --location "India" --target 10 --max-scrolls 20
+   python main.py --query "Hiring Full Stack" --location "India" --target 10000 --max-scrolls 100
    ```
 
 ## Usage
