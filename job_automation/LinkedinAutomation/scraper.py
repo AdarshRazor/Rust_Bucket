@@ -27,15 +27,30 @@ LINKEDIN_USERNAME = os.getenv("LINKEDIN_USERNAME")
 LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")
 
 def get_driver():
+    import random
     options = webdriver.FirefoxOptions()
-    # User-agent rotation
-    try:
-        ua = UserAgent()
-        user_agent = ua.random
-        print(f"Using User-Agent: {user_agent}")
-        options.set_preference("general.useragent.override", user_agent)
-    except Exception as e:
-        print(f"UserAgent error: {e}. Using default user-agent.")
+    # List of common desktop user-agents
+    desktop_user_agents = [
+        # Chrome on Windows
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        # Firefox on Windows
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0",
+        # Edge on Windows
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.2210.61",
+        # Chrome on Mac
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        # Safari on Mac
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.3 Safari/605.1.15",
+        # Firefox on Mac
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 13.2; rv:120.0) Gecko/20100101 Firefox/120.0",
+        # Chrome on Linux
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        # Firefox on Linux
+        "Mozilla/5.0 (X11; Linux x86_64; rv:120.0) Gecko/20100101 Firefox/120.0",
+    ]
+    user_agent = random.choice(desktop_user_agents)
+    print(f"Using Desktop User-Agent: {user_agent}")
+    options.set_preference("general.useragent.override", user_agent)
     # Uncomment below for headless mode
     # options.add_argument('--headless')
     # Add more options as needed (proxy, etc.)
