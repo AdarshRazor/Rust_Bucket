@@ -3,7 +3,7 @@ document.getElementById('runButton').addEventListener('click', runCode);
 
 function compileCode() {
   const code = document.getElementById('codeInput').value;
-  const apiUrl = '9207a672bbmshbf0e1faa2020fdep1753a2jsnf1cb64dfa743'; // Replace with the actual API URL
+  const apiUrl = ''; // Replace with the actual API URL
 
   // Make API call to compile the code
   // Use fetch or XMLHttpRequest to send a POST request to the API endpoint
