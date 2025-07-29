@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payslip - May 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .payslip-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 20px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .company-info h1 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .company-info p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        
+        .payslip-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0 30px 0;
+            color: #333;
+        }
+        
+        .details-section {
+            margin-bottom: 30px;
+        }
+        
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+        
+        .details-table th,
+        .details-table td {
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        .details-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            width: 50%;
+        }
+        
+        .details-table td {
+            font-size: 14px;
+        }
+        
+        .earnings-deductions {
+            margin-bottom: 30px;
+        }
+        
+        .earnings-deductions-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+        
+        .earnings-deductions-table th,
+        .earnings-deductions-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .earnings-deductions-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .earnings-deductions-table .sub-header {
+            background-color: #e9ecef;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .earnings-deductions-table .total-row {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            border-top: 2px solid #000;
+        }
+        
+        .net-pay-section {
+            border: 2px solid #000;
+            border-top: none;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .net-pay-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .net-pay-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .note-section {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+        }
+        
+        .note-section h4 {
+            color: #856404;
+            margin-bottom: 5px;
+        }
+        
+        .note-section p {
+            color: #856404;
+            font-size: 14px;
+        }
+        
+        .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="payslip-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo">
+            </div>
+            <div class="company-info">
+                <h1>AppSnare</h1>
+                <p>Arya Nagar, Kanpur</p>
+                <p>Bengaluru - 208002</p>
+            </div>
+        </div>
+        
+        <!-- Payslip Title -->
+        <div class="payslip-title">
+            Payslip for May-2025
+        </div>
+        
+        <!-- Employee and Bank Details Section -->
+        <div class="details-section">
+            <table class="details-table">
+                <tr>
+                    <th>Employee Details</th>
+                    <th>Bank and Work Details</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Employee Name:</div>
+                        <div>Adarsh Anand</div>
+                    </td>
+                    <td>
+                        <div class="label">PF No:</div>
+                        <div>N/A</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Employee ID:</div>
+                        <div>32</div>
+                    </td>
+                    <td>
+                        <div class="label">UAN:</div>
+                        <div></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Designation:</div>
+                        <div>Full Stack Developer</div>
+                    </td>
+                    <td>
+                        <div class="label">Work Location:</div>
+                        <div>Kanpur</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Department:</div>
+                        <div>DevelopmentLabs</div>
+                    </td>
+                    <td>
+                        <div class="label">LOP Days:</div>
+                        <div>0.00</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">Date of Joining:</div>
+                        <div>01/07/2021</div>
+                    </td>
+                    <td>
+                        <div class="label">Worked Days/Paid Days:</div>
+                        <div>31.00</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">ESI Number:</div>
+                        <div>N/A</div>
+                    </td>
+                    <td>
+                        <div class="label">Bank A/c No:</div>
+                        <div>401201504627</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="label">PAN:</div>
+                        <div>CIQPA5088L</div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Earnings and Deductions Section -->
+        <div class="earnings-deductions">
+            <table class="earnings-deductions-table">
+                <tr>
+                    <th colspan="2">Earnings</th>
+                    <th colspan="2">Deductions</th>
+                </tr>
+                <tr>
+                    <th class="sub-header">Description</th>
+                    <th class="sub-header">Amount (Rs)</th>
+                    <th class="sub-header">Description</th>
+                    <th class="sub-header">Amount (Rs)</th>
+                </tr>
+                <tr>
+                    <td>Basic</td>
+                    <td class="amount">36667.00</td>
+                    <td>Income Tax</td>
+                    <td class="amount">62.00</td>
+                </tr>
+                <tr>
+                    <td>House Rent Allowance</td>
+                    <td class="amount">18333.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Conveyance Allowance</td>
+                    <td class="amount">1600.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Special Allowance</td>
+                    <td class="amount">14067.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Night Shift Allowance</td>
+                    <td class="amount">1000.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Communication Allowance</td>
+                    <td class="amount">1000.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Internet Expenses Reimbursement</td>
+                    <td class="amount">750.00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>Total Earnings</strong></td>
+                    <td class="amount"><strong>73417.00</strong></td>
+                    <td><strong>Total Deductions</strong></td>
+                    <td class="amount"><strong>62.00</strong></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Net Pay Summary Section -->
+        <div class="net-pay-section">
+            <div class="net-pay-row">
+                <span class="label">Net Pay:</span>
+                <span class="amount">68365.00</span>
+            </div>
+            <div class="net-pay-row">
+                <span class="label">Amount in Words:</span>
+                <span>Rupees Seventy Three Thousand Four Hundred Seventeen Only</span>
+            </div>
+            <div class="net-pay-row">
+                <span class="label">Mode of Payment:</span>
+                <span>Bank Transfer</span>
+            </div>
+            <div class="net-pay-row total">
+                <span class="label">Total Net Payable:</span>
+                <span class="amount">68365.00</span>
+            </div>
+        </div>
+        
+        <!-- Note Section -->
+        <div class="note-section">
+            <h4>Note :</h4>
+            <p>This payslip is computer generated, hence no signature is required</p>
+        </div>
+    </div>
+</body>
+</html>
