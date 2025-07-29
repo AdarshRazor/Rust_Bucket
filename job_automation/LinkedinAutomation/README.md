@@ -45,7 +45,7 @@ This project automates the extraction of email addresses from recent LinkedIn po
    ```
 4. **Run the scraper:**
    ```bash
-   python main.py --query "Hiring Full Stack" --location "India" --target 10000 --max-scrolls 100
+   python main.py --query "Hiring Full Stack" --location "India" --target 10000 --max-scrolls 50
    ```
 
 ## Usage
