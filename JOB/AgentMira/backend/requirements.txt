@@ -1,0 +1,44 @@
+# FastAPI and web server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary
+
+# Redis
+redis
+
+# ML and data processing
+scikit-learn
+pandas
+numpy
+joblib
+
+# Validation and serialization
+pydantic
+pydantic-settings
+
+# HTTP client
+httpx
+
+# Environment management
+python-dotenv
+
+# CORS
+fastapi-cors
+
+# Logging
+structlog
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+
+# Development
+black
+isort
+flake8
