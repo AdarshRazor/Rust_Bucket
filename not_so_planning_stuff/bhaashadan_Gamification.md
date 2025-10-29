@@ -4,7 +4,7 @@
 **Date:** October 28, 2025
 **Author:** AdarshRazor
 
-## **2. The Problem**
+## **The Problem**
 
 The current badge-only reward system on Bhashadaan suffers from low user motivation. As identified, the core issues are:
 *   A lack of immediate gratification and feedback.
@@ -12,9 +12,9 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
 *   Predictable and intangible rewards with no external value.
 *   A core "validation" task that lacks a clear "win" state, failing to trigger a dopamine response.
 
-## **3. Core Features & Requirements**
+## **Core Features & Requirements**
 
-**3.1. Feature: Points & Scoring System ("Bhasha Points")**
+**1. Feature: Points & Scoring System ("Bhasha Points")**
 *   **Description:** This is the foundational element. Users earn "Bhasha Points" (BP) for every positive action they take on the platform. This system provides immediate, quantifiable feedback on a user's contribution.
 *   **User Stories:**
     *   As a user, when I submit a new sentence, I want to earn points instantly.
@@ -27,7 +27,7 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
         *   "Correct" Validation Bonus (+5 BP) - *A validation is deemed "correct" if it matches the majority vote after N number of validations.*
     *   The user's total BP score should be prominently displayed on their dashboard.
 
-**3.2. Feature: Real-time Feedback & Daily Streaks**
+**2. Feature: Real-time Feedback & Daily Streaks**
 *   **Description:** To make the experience feel alive and responsive, we need to provide immediate visual feedback and reward consistent behavior.
 *   **User Stories:**
     *   As a user, after I complete a task, I want to see a small animation showing the points I earned (e.g., "+10").
@@ -38,7 +38,7 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
     *   Offer bonus multipliers for maintaining a streak (e.g., Day 3 = 1.2x points, Day 7 = 2x points).
     *   A daily cron job to reset streaks for users who have not contributed in the last 24 hours.
 
-**3.3. Feature: Leaderboards & Social Ranking**
+**3. Feature: Leaderboards & Social Ranking**
 *   **Description:** This directly addresses the need for social competition. Leaderboards give context to a user's score and create a powerful motivational driver.
 *   **User Stories:**
     *   As a user, I want to see how my total score ranks against other contributors.
@@ -50,7 +50,7 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
         3.  **All-Time:** A permanent hall of fame.
     *   The UI should show the Top 10 users and the current user's position, even if they are not in the top 10 (e.g., "You are #2,451").
 
-**3.4. Feature: Levels & Progress Visualization**
+**4. Feature: Levels & Progress Visualization**
 *   **Description:** Badges are slow; levels are continuous. A leveling system gives a constant sense of forward momentum.
 *   **User Stories:**
     *   As a user, I want to see a progress bar that fills up as I earn points, showing me how close I am to the next level.
@@ -60,7 +60,7 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
     *   Assign creative, language-themed titles to levels (e.g., Level 1: "Shishya", Level 5: "Lipik", Level 10: "Pandit").
     *   A progress bar/XP bar must be visible on the user's main profile/dashboard.
 
-**3.5. Feature: Virtual Currency & Store ("Dhwani Coins")**
+**5. Feature: Virtual Currency & Store ("Dhwani Coins")**
 *   **Description:** This feature introduces variable rewards and gives tangible value to effort. Users earn "Dhwani Coins" (DC) for specific achievements, which can be spent on cosmetic items.
 *   **User Stories:**
     *   As a user, when I level up or complete a 7-day streak, I want to earn a special currency.
@@ -72,7 +72,7 @@ The current badge-only reward system on Bhashadaan suffers from low user motivat
         *   Finishing in the Top 3 of a weekly leaderboard.
     *   Create a simple virtual store where users can purchase non-functional, cosmetic items (e.g., profile themes, unique badge designs). This makes the rewards socially visible.
 
-## **4. Success Metrics**
+## **Success Metrics**
 *   **Engagement:** Increase in Daily Active Users (DAU) and Monthly Active Users (MAU).
 *   **Contribution:** 25% increase in the number of submissions/validations per user session.
 *   **Retention:** Increase in Day 7 and Day 30 user retention rates.
