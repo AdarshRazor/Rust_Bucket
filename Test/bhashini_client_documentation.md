@@ -52,6 +52,8 @@ client = BhashiniClient(api_key="YOUR_API_KEY")
 
 ### 1. Automatic Speech Recognition (ASR)
 
+> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#asr)
+
 Automatic Speech Recognition (ASR) enables the conversion of spoken language into written text. This service accepts audio input in formats like WAV, FLAC, or MP3 and processes it to generate accurate text transcriptions. It supports various Indian languages and allows configuration of parameters such as sampling rate and audio format to optimize performance for different environments (e.g., Android, iOS).
 
 #### Parameters
@@ -64,6 +66,16 @@ Automatic Speech Recognition (ASR) enables the conversion of spoken language int
 | `samplingRate`   | `int`  | No       | Sampling rate of the audio (e.g., `16000`, `44100`).       |
 | `preProcessors`  | `list` | No       | List of pre-processing steps.                              |
 | `postProcessors` | `list` | No       | List of post-processing steps.                             |
+
+#### Pre-processors & Post-processors
+
+- **Pre-processors**:
+  - `vad`: Voice Activity Detection. Processes only detected voice activity (max 30s).
+  - `denoiser`: Reduces background noise to improve accuracy.
+- **Post-processors**:
+  - `itn`: Inverse Text Normalization. Converts spoken numbers/dates to text (e.g., "two thousand" -> "2000").
+  - `punctuation`: Adds punctuation to the output text.
+  - `hotword_list`: (Hindi only) Prioritizes specific words/phrases. Usage: `[{"hotword_list": ["word1", "word2"]}]`
 
 #### Example
 
@@ -85,19 +97,26 @@ text = client.asr(
 
 ### 2. Neural Machine Translation (NMT)
 
+> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#nmt)
+
 Neural Machine Translation (NMT) facilitates the translation of text from one language to another with high accuracy. It supports a wide range of Indian language pairs and English. The service takes digital text input and returns the translated text, handling nuances and context effectively. It is ideal for breaking language barriers in real-time applications.
 
 #### Parameters
 
-| Parameter        | Type   | Required | Description                                          |
-| :--------------- | :----- | :------- | :--------------------------------------------------- |
-| `text`           | `str`  | **Yes**  | The text to translate.                               |
-| `source_lang`    | `str`  | **Yes**  | Source language code (e.g., `'en'`).                 |
-| `target_lang`    | `str`  | **Yes**  | Target language code (e.g., `'hi'`).                 |
-| `serviceId`      | `str`  | No       | Specific model ID to use.                            |
-| `numTranslation` | `int`  | No       | Number of translations to return.                    |
-| `preProcessors`  | `list` | No       | List of pre-processing steps (e.g., `['glossary']`). |
-| `postProcessors` | `list` | No       | List of post-processing steps.                       |
+| Parameter        | Type   | Required | Description                          |
+| :--------------- | :----- | :------- | :----------------------------------- |
+| `text`           | `str`  | **Yes**  | The text to translate.               |
+| `source_lang`    | `str`  | **Yes**  | Source language code (e.g., `'en'`). |
+| `target_lang`    | `str`  | **Yes**  | Target language code (e.g., `'hi'`). |
+| `serviceId`      | `str`  | No       | Specific model ID to use.            |
+| `numTranslation` | `int`  | No       | Number of translations to return.    |
+| `preProcessors`  | `list` | No       | List of pre-processing steps.        |
+| `postProcessors` | `list` | No       | List of post-processing steps.       |
+
+#### Pre-processors & Post-processors
+
+- **Post-processors**:
+  - `glossary`: Overrides translations for specific terms defined in your Bhashini profile. Useful for domain-specific terminology.
 
 #### Example
 
@@ -119,6 +138,8 @@ translation = client.nmt(
 
 ### 3. Text-to-Speech (TTS)
 
+> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#tts)
+
 Text-to-Speech (TTS) converts digital text into natural-sounding spoken audio. This service allows for customization of the output voice, including gender (male/female) and speech speed (0.5 to 2x). It supports multiple sampling rates to balance audio quality and file size, making it suitable for accessibility features, voice assistants, and content reading.
 
 #### Parameters
@@ -136,6 +157,14 @@ Text-to-Speech (TTS) converts digital text into natural-sounding spoken audio. T
 | `return_base64`  | `bool`  | No       | If `True`, returns base64 string instead of saving/returning URL. |
 | `preProcessors`  | `list`  | No       | List of pre-processing steps.                                     |
 | `postProcessors` | `list`  | No       | List of post-processing steps.                                    |
+
+#### Pre-processors & Post-processors
+
+- **Pre-processors**:
+  - `text-normalization`: Converts numbers and dates to spoken form (e.g., "2025" -> "two thousand twenty five").
+- **Post-processors**:
+  - `high-compression`: Reduces file size (~64kbps) for low bandwidth.
+  - `low-compression`: Moderate compression (~128kbps) balancing quality and size.
 
 #### Example
 
@@ -219,6 +248,12 @@ Bhashini provides different keys for different purposes. Using the wrong key is 
 
 ---
 
+## 📚 Resources
+
+- **[Postman Collection](https://dibd-bhashini.gitbook.io/bhashini-apis/download-postman-collection)**: Download the official Postman collection to test Bhashini APIs directly.
+
+---
+
 ## ❓ Troubleshooting & FAQ
 
 ### Common Errors
@@ -232,10 +267,10 @@ Bhashini provides different keys for different purposes. Using the wrong key is 
 ### Frequently Asked Questions
 
 **Q: Where do I get the API Key?**  
-A: Sign up at the [Bhashini Dashboard](https://dashboard.bhashini.co.in/user/register). Navigate to "My Profile" -> "API Key" to generate your keys.
+A: Sign up at the [Bhashini Dashboard](https://dashboard.bhashini.co.in/user/login). Navigate to "My Profile" -> "API Key" to generate your keys.
 
 **Q: Which languages are supported?**  
-A: Bhashini supports 22 Indian languages. You can use the `list_supported_languages` method or check the [official documentation](https://bhashini.gov.in/en/).
+A: Bhashini supports 22 Indian languages. You can use the `list_supported_languages` method or check the [official documentation](https://dibd-bhashini.gitbook.io/bhashini-apis).
 
 **Q: Can I use a local audio file?**  
 A: Currently, the library requires a **publicly accessible URL** for audio files. You can host your file on S3, Google Drive (direct link), or any public server.
