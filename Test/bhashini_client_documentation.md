@@ -1,9 +1,9 @@
 # BHASHINI Client
 
-[![PyPI version](https://badge.fury.io/py/bhashini-client.svg)](https://badge.fury.io/py/bhashini-client)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<a href="https://badge.fury.io/py/bhashini-client" target="_blank"><img src="https://badge.fury.io/py/bhashini-client.svg" alt="PyPI version"></a>
+<a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
 
-A powerful and easy-to-use Python client for **Bhashini**, India's AI-led language translation platform. This library provides a simple interface to access **Automatic Speech Recognition (ASR)**, **Neural Machine Translation (NMT)**, **Text-to-Speech (TTS)** and **Other Service:**: _(soon to be coming)_
+A powerful and easy-to-use Python client for <a href="https://bhashini.gov.in/" target="_blank">Bhashini</a>, India's AI-led language translation platform. This library provides a simple interface to access **Automatic Speech Recognition (ASR)**, **Neural Machine Translation (NMT)**, **Text-to-Speech (TTS)** and **Other Service:**: _(soon to be coming)_
 
 - **OCR, Transliteration**
 - **ALD (Automatic Language Detection)**
@@ -14,7 +14,7 @@ A powerful and easy-to-use Python client for **Bhashini**, India's AI-led langua
 - **Speaker Enrollment & Verification**
 - **Lip Sync**
 
-> This Bhashini Documentation has been written by Bhashini Team. Please reach out to Bhashini Team on email id [BHASHINI-support](mailto:digitalindiabhashinidivision@gmail.com), if you face issues implementing the APIs.
+> This Bhashini Documentation has been written by Bhashini Team. Please reach out to Bhashini Team on email id <a href="mailto:digitalindiabhashinidivision@gmail.com" target="_blank">BHASHINI-support</a>, if you face issues implementing the APIs.
 
 ---
 
@@ -46,13 +46,13 @@ from bhashini_client import BhashiniClient
 client = BhashiniClient(api_key="YOUR_API_KEY")
 ```
 
-> 💡 Click here to get your own [API key](https://dashboard.bhashini.co.in/user/register), sign up for a Bhashini account. [Docs (Read more)](https://dibd-bhashini.gitbook.io/bhashini-apis/pre-requisites-and-onboarding)
+> 💡 Click here to get your own <a href="https://dashboard.bhashini.co.in/user/register" target="_blank">API key</a>, sign up for a Bhashini account. <a href="https://dibd-bhashini.gitbook.io/bhashini-apis/pre-requisites-and-onboarding" target="_blank">Docs (Read more)</a>
 
 ---
 
 ### 1. Automatic Speech Recognition (ASR)
 
-> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#asr)
+> 💡 <a href="https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#asr" target="_blank">Available Models</a>
 
 Automatic Speech Recognition (ASR) enables the conversion of spoken language into written text. This service accepts audio input in formats like WAV, FLAC, or MP3 and processes it to generate accurate text transcriptions. It supports various Indian languages and allows configuration of parameters such as sampling rate and audio format to optimize performance for different environments (e.g., Android, iOS).
 
@@ -93,13 +93,13 @@ text = client.asr(
 )
 ```
 
-> ℹ️ For more read our [Official Documentation](https://dibd-bhashini.gitbook.io/bhashini-apis)
+> ℹ️ For more read our <a href="https://dibd-bhashini.gitbook.io/bhashini-apis" target="_blank">Official Documentation</a>
 
 ---
 
 ### 2. Neural Machine Translation (NMT)
 
-> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#nmt)
+> 💡 <a href="https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#nmt" target="_blank">Available Models</a>
 
 Neural Machine Translation (NMT) facilitates the translation of text from one language to another with high accuracy. It supports a wide range of Indian language pairs and English. The service takes digital text input and returns the translated text, handling nuances and context effectively. It is ideal for breaking language barriers in real-time applications.
 
@@ -142,7 +142,7 @@ translation = client.nmt(
 
 ### 3. Text-to-Speech (TTS)
 
-> 💡 [Available Models](https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#tts)
+> 💡 <a href="https://dibd-bhashini.gitbook.io/bhashini-apis/available-models-for-usage#tts" target="_blank">Available Models</a>
 
 Text-to-Speech (TTS) converts digital text into natural-sounding spoken audio. This service allows for customization of the output voice, including gender (male/female) and speech speed (0.5 to 2x). It supports multiple sampling rates to balance audio quality and file size, making it suitable for accessibility features, voice assistants, and content reading.
 
@@ -256,7 +256,7 @@ Bhashini provides different keys for different purposes. Using the wrong key is 
 
 ## 📚 Resources
 
-- **[Postman Collection](https://dibd-bhashini.gitbook.io/bhashini-apis/download-postman-collection)**: Download the official Postman collection to test Bhashini APIs directly.
+- **<a href="https://dibd-bhashini.gitbook.io/bhashini-apis/download-postman-collection" target="_blank">Postman Collection</a>**: Download the official Postman collection to test Bhashini APIs directly.
 
 ---
 
@@ -273,10 +273,10 @@ Bhashini provides different keys for different purposes. Using the wrong key is 
 ### Frequently Asked Questions
 
 **Q: Where do I get the API Key?**  
-A: Sign up at the [Bhashini Dashboard](https://dashboard.bhashini.co.in/user/login). Navigate to "My Profile" -> "API Key" to generate your keys.
+A: Sign up at the <a href="https://dashboard.bhashini.co.in/user/login" target="_blank">Bhashini Dashboard</a>. Navigate to "My Profile" -> "API Key" to generate your keys.
 
 **Q: Which languages are supported?**  
-A: Bhashini supports 22 Indian languages. You can use the `list_supported_languages` method or check the [official documentation](https://dibd-bhashini.gitbook.io/bhashini-apis).
+A: Bhashini supports 22 Indian languages. You can use the `list_supported_languages` method or check the <a href="https://dibd-bhashini.gitbook.io/bhashini-apis" target="_blank">official documentation</a>.
 
 **Q: Can I use a local audio file?**  
 A: Currently, the library requires a **publicly accessible URL** for audio files. You can host your file on S3, Google Drive (direct link), or any public server.
