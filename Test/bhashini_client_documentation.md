@@ -190,12 +190,12 @@ graph TD
     User[Developer] -->|1. Register & Get Keys| Portal[Bhashini Portal]
     Portal -->|Generates| Keys{API Keys}
     Keys -->|ulcaApiKey| Search[Pipeline Search / Config]
-    Keys -->|inferenceApiKey| Compute[Compute API (ASR/NMT/TTS)]
+    Keys -->|inferenceApiKey| Compute[Compute API ASR/NMT/TTS]
 
     User -->|2. Initialize Client| Client[BhashiniClient]
     Client -.->|Uses inferenceApiKey| Compute
 
-    User -->|3. Call Method (e.g., .asr)| Client
+    User -->|3. Call Method e.g. .asr| Client
     Client -->|Request| Compute
     Compute -->|Response| Client
     Client -->|Result| User
