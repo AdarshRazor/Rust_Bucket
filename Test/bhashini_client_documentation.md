@@ -93,6 +93,8 @@ text = client.asr(
 )
 ```
 
+> ℹ️ For more read our [Official Documentation](https://dibd-bhashini.gitbook.io/bhashini-apis)
+
 ---
 
 ### 2. Neural Machine Translation (NMT)
@@ -133,6 +135,8 @@ translation = client.nmt(
     preProcessors=["glossary"]
 )
 ```
+
+> ℹ️ For more read our [Official Documentation](https://dibd-bhashini.gitbook.io/bhashini-apis)
 
 ---
 
@@ -185,6 +189,8 @@ client.tts(
 # TTS returning base64
 base64_audio = client.tts("Hello", "en", return_base64=True)
 ```
+
+> ℹ️ For more read our [Official Documentation](https://dibd-bhashini.gitbook.io/bhashini-apis)
 
 ---
 
