@@ -6,7 +6,7 @@ Once cleaned, I want the output in CSV format with the following headers:
 
 **EmailAddress,FirstName,Comments**
 
-Here’s how to determine the `FirstName`:
+Here's how to determine the `FirstName`:
 - If the email is **generic** (starts with `info@`, `hr@`, `sales@`, `jobs@`, `contact@`, etc.), then use `"Team"` as the first name.
 - Otherwise, extract the first name intelligently from the email (e.g., from `john.doe@company.com`, use `John`, or from `aakash.sharma@company.com`, use `Aakash`) - The names would be mostly from India.
 
