@@ -21,3 +21,5 @@ env/
 *.json
 *.db
 *.sqlite3
+
+.project

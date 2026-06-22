@@ -61,7 +61,7 @@
 | Task ID | Task Description | Status | Priority | Dependency | Comments |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **P1.1** | Create `contacts.csv` with one column: `EmailAddress`. | ✅ Completed | High | - | Created in `/emails/contacts.csv` |
-| **P1.2** | Write the standard email content and finalize the resume PDF. | ✅ Completed | High | - | Created in `/content/email_template.html` and `/content/AdarshAnand_FullStack_Resume.pdf` |
+| **P1.2** | Write the standard email content and finalize the resume PDF. | ✅ Completed | High | - | Created in `/content/email_template.html` and `/content/AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf` |
 | **P1.3** | Generate a secure "App Password" for your sending email account. | ✅ Completed | High | - | Generated in `.env.local` - `APP_PASSWORD_NAME` and `APP_PASSWORD` |
 | **P1.4** | Get an API key from an LLM provider (e.g., Gemini). | ✅ Completed | High | - | Generated in `.env.local` - `GEMINI_API_KEY` |
 | **P1.5** | Set up a Python virtual environment and install `pandas`, `langchain`, `langsmith`, `google-genai`, `python-dotenv`. | ✅ Completed | High | - | Created in `requirements.txt` |

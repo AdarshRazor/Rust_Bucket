@@ -64,7 +64,7 @@ def send_email(recipient_email: str, salutation: str, sender_email: str, app_pas
         msg.attach(html_part)
         
         # Attach resume PDF
-        resume_path = "content/AdarshAnand_FullStack_Resume.pdf"
+        resume_path = "content/AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf"
         if os.path.exists(resume_path):
             with open(resume_path, "rb") as attachment:
                 part = MIMEBase('application', 'octet-stream')
@@ -73,7 +73,7 @@ def send_email(recipient_email: str, salutation: str, sender_email: str, app_pas
             encoders.encode_base64(part)
             part.add_header(
                 'Content-Disposition',
-                f'attachment; filename=AdarshAnand_FullStack_Resume.pdf'
+                f'attachment; filename=AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf'
             )
             msg.attach(part)
         else:

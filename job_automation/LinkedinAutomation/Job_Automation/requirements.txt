@@ -1,0 +1,8 @@
+selenium
+webdriver-manager
+python-dotenv
+requests
+beautifulsoup4
+pandas
+fake-useragent
+openpyxl

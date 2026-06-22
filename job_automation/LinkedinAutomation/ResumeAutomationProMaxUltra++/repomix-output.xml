@@ -1,0 +1,641 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+clean_raw_file.py
+content/adarsh.jpg
+content/AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf
+content/email_template.html
+documentation/PRD_Basic.md
+documentation/PRD.md
+main.py
+outreach.py
+readme.md
+requirements.txt
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="clean_raw_file.py">
+import pandas as pd
+
+# Load CSV file
+input_file = 'emails/raw_contacts.csv'  # Change this to your actual CSV file name
+df = pd.read_csv(input_file)
+
+# Check if 'EmailAddress' column exists
+if 'EmailAddress' not in df.columns:
+    raise ValueError("Column 'EmailAddress' not found in the CSV.")
+
+# Drop rows where 'EmailAddress' is empty or null
+# (after loading and before dropping duplicates)
+df = df[df['EmailAddress'].notna() & (df['EmailAddress'].astype(str).str.strip() != '')]
+
+# Drop duplicates (exact email match)
+df_unique = df.drop_duplicates(subset=['EmailAddress'])  # type: ignore
+
+# Optional: Reset index
+df_unique = df_unique.reset_index(drop=True)
+
+# Save cleaned email list
+output_file = 'emails/cleaned_emails.csv'
+df_unique.to_csv(output_file, index=False)
+
+print(f"✅ Cleaned emails saved to '{output_file}'. Total unique emails: {len(df_unique)}")
+</file>
+
+<file path="content/email_template.html">
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; color: #222; line-height: 1.7;">
+
+    <p>Hi <b><span style="background-color: #ffd966;">{{name}}</span></b>,</p>
+
+    <p>
+      I came across the Hiring post from the 
+      <b><span style="background-color: orange;">Linkedin</span></b>
+      — and it immediately caught my attention. I am sharing my interest for the same.
+    </p>
+
+    <p>
+      I'm <b>Adarsh</b> 🖐️ a
+      <b><span style="background-color: #ffd966;">Full Stack AI Engineer</span></b>
+      with 5+ years of experience. I'm deeply curious about
+      <b><span style="background-color: #ff9900; padding: 1px 4px; border-radius: 3px;">technology, AI systems, and building things that actually work in production</span></b>.
+      Currently at <b>Digital India – Bhashini (Ministry of Electronics & IT)</b>, where I
+      architected a
+      <b><span style="background-color: #ffd966;">multi-agent AI research platform</span></b>
+      — intent detection, RAG pipelines, multi-LLM orchestration
+      (Claude, GPT-4o, Gemini), streaming interfaces — deployed at
+      government scale across <b>22+ Indian languages</b>.
+    </p>
+
+    <p>
+      Outside of work, I love pushing into niche territory —
+      I've built an
+      <b><span style="background-color: #ffd966;">end-to-end encrypted messenger</span></b>
+      using the <b>Signal Protocol (X3DH + Double Ratchet)</b>,
+      <b><span style="background-color: #ffd966;">NLP/ETL pipelines</span></b>
+      with NER and knowledge graph construction, and a full
+      <b><span style="background-color: #ff9900; padding: 1px 4px; border-radius: 3px;">VS Code extension</span></b>
+      with real-time collaboration infrastructure. I work across
+      <b><span style="background-color: #ffd966;">TypeScript and Python</span></b>
+      and I'm comfortable owning a system from architecture to deployment.
+    </p>
+
+    <p>
+      I also run a small
+      <b><span style="background-color: #ffd966;">
+        <a href="https://adarshere.vercel.app/store" style="color: #007bff;">No-Code AI automation store</a>
+      </span></b>
+      — so I'm always experimenting and keeping pace with what's actually moving in the market.
+    </p>
+
+    <p>
+      Here are the details you requested:<br>
+      I am adding my
+      <b><span style="background-color: yellow;">Resume</span></b>
+      for your reference as well as my
+      <b><span style="background-color: yellow;"><a href="https://adarshere.vercel.app/" style="color: #007bff; text-decoration: underline;">Portfolio</a></span></b>.
+      Please do visit once, you like it and get more ideas about me.
+    </p>
+
+    <p>Thanks for your time 🙏</p>
+
+    <table style="margin-top: 16px; border-top: 2px solid #ff9900; padding-top: 12px;">
+      <tr>
+        <td>
+          <img
+            src="https://raw.githubusercontent.com/AdarshRazor/adarshrazor/refs/heads/main/adarsh.jpg"
+            alt="Adarsh Anand"
+            width="58"
+            style="border-radius: 50%; vertical-align: middle; border: 2px solid #ff9900;"
+          >
+        </td>
+        <td style="padding-left: 14px; font-size: 14px;">
+          <b style="font-size: 15px;">Adarsh Anand</b><br>
+          <span style="color: #ff9900; font-weight: bold;">Full Stack AI Engineer</span><br>
+          <span style="color: #555;">+91 9108496304 &nbsp;|&nbsp; adarshanshu7@gmail.com</span><br>
+          <a href="https://adarshere.vercel.app/" style="color: #007bff;">Portfolio</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.linkedin.com/in/adarsh007" style="color: #007bff;">LinkedIn</a>
+          &nbsp;|&nbsp;
+          <a href="https://github.com/adarshrazor" style="color: #007bff;">GitHub</a>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>
+</file>
+
+<file path="documentation/PRD_Basic.md">
+# **Process Requirement Document (PRD): Bulk Email Automation with Smart Tracking**
+
+**1. Project Overview**
+
+*   **Project Name:** Bulk Email Automation with Smart Tracking
+*   **Problem:** Manually sending a standard recruiting email to a large list of HR contacts is repetitive and inefficient. It's difficult to track who has been contacted, especially if the process is interrupted.
+*   **Goal:** To build a Python application that sends a single, standard email with a resume attached to a list of HR contacts from a CSV file. The application will smartly personalize the salutation (e.g., "Hi, [Name]" or "Hi, Team") and, after each successful send, update the source CSV file with a "Sent" status to maintain a clear record.
+
+**2. Core Features**
+
+*   **F1: CSV Data Handling (Read/Write):** The system must read a list of email addresses from a CSV file. Critically, after successfully sending an email, it must write back to that same CSV, adding a "Sent" status in a new `Comments` column for the corresponding email address.
+*   **F2: Smart Salutation (AI Bonus):** Before sending, the system will analyze the recipient's email address.
+    *   For personal emails (e.g., `anujbhatiya@company.com`), it will extract the first name ("Anuj").
+    *   For generic emails (e.g., `hr@company.com`, `careers@...`), it will use the word "Team".
+    This ensures a minor but effective level of personalization.
+*   **F3: Resume Attachment:** The system must attach a specified resume file (PDF) to every email.
+*   **F4: Standardized Content Delivery:** The system will use a single, pre-written email template for the body of all emails, inserting only the smart salutation.
+*   **F5: Secure & Reliable Email Sending:** The application will use a standard SMTP provider (like Gmail or Outlook) to dispatch emails. Credentials will be managed securely via a `.env` file.
+*   **F6: Resilient & Stateful Operation:** The script will check the `Comments` column before sending. If an email has already been marked as "Sent", it will be skipped. This allows the script to be stopped and restarted without sending duplicates.
+*   **F7: Rate Limiting:** The system will include a mandatory delay between sending emails to avoid being flagged as spam by email providers.
+
+**3. Technical Stack**
+
+*   **Programming Language:** Python 3.9+
+*   **Core Libraries:**
+    *   **Pandas:** Essential for both reading the initial CSV and for updating and saving it with the "Sent" status.
+    *   **LangChain & LLM Provider (e.g., OpenAI):** Used specifically for the "Smart Salutation" feature. An LLM is excellent at parsing varied email formats to extract a name or identify a generic address.
+    *   **SMTPLIB & Email:** Standard Python libraries for constructing the email with attachments and sending via an SMTP server.
+    *   **Python-Dotenv:** To securely manage sensitive credentials like your email App Password and LLM API Key.
+
+**4. Project Phases & Steps**
+
+**Phase 1: Setup and Preparation**
+1.  **Data Preparation:** Create a CSV file named `contacts.csv` with a single header: `EmailAddress`. Populate it with the HR emails.
+2.  **Environment Setup:** Create a Python virtual environment, install the required libraries, and create a `.env` file for your credentials (Email App Password, LLM API Key).
+3.  **Content Creation:** Write your single, standard email body in a text file or as a string in your script. Finalize your resume PDF.
+
+**Phase 2: Scripting & Core Logic**
+1.  **Main Script:** Create a Python script (e.g., `run_outreach.py`).
+2.  **Load Data:** Use Pandas to load `contacts.csv` into a DataFrame. Check if a `Comments` column exists; if not, create it.
+3.  **Implement Smart Salutation:** Write a function that takes an email address, uses a LangChain prompt to an LLM to extract the first name or identify it as "Team", and returns the result.
+4.  **Implement Email Sender:** Write a robust function using `smtplib` that sends an email with an attachment.
+5.  **Create Main Loop:** Iterate through the rows of the Pandas DataFrame.
+    *   **Check Status:** In the loop, first check if the `Comments` column for the current row is already "Sent". If so, print a "Skipping" message and continue to the next contact.
+    *   **Process & Send:** If not sent, call the Smart Salutation function, construct the full email, and send it using the email sender function within a `try...except` block.
+    *   **Update DataFrame:** If the email is sent successfully (in the `try` block), update the `Comments` column for that row in the DataFrame to "Sent". If it fails (in the `except` block), update it to "Failed".
+    *   **Rate Limit:** Include a `time.sleep()` at the end of each loop iteration.
+6.  **Save Progress:** After the loop completes, use `df.to_csv('contacts.csv', index=False)` to save the updated DataFrame back to the original file, preserving the tracking information.
+
+**Phase 3: Testing and Execution**
+1.  **Dry Run:** Test the entire script with a CSV containing 2-3 of your own email addresses.
+2.  **Verification:** Confirm you received the emails. Check that the salutation is correct ("Hi, [Your Name]") and the resume is attached. Most importantly, open `contacts.csv` and verify that the `Comments` column is now filled with "Sent".
+3.  **Live Run:** Once verified, run the script with the full list of 600 contacts. You can monitor the progress from the script's console output.
+
+***
+
+### **Project TODO List (Separated by Phase)**
+
+#### **Phase 1: Setup & Preparation**
+
+| Task ID | Task Description | Status | Priority | Dependency | Comments |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **P1.1** | Create `contacts.csv` with one column: `EmailAddress`. | ✅ Completed | High | - | Created in `/emails/contacts.csv` |
+| **P1.2** | Write the standard email content and finalize the resume PDF. | ✅ Completed | High | - | Created in `/content/email_template.html` and `/content/AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf` |
+| **P1.3** | Generate a secure "App Password" for your sending email account. | ✅ Completed | High | - | Generated in `.env.local` - `APP_PASSWORD_NAME` and `APP_PASSWORD` |
+| **P1.4** | Get an API key from an LLM provider (e.g., Gemini). | ✅ Completed | High | - | Generated in `.env.local` - `GEMINI_API_KEY` |
+| **P1.5** | Set up a Python virtual environment and install `pandas`, `langchain`, `langsmith`, `google-genai`, `python-dotenv`. | ✅ Completed | High | - | Created in `requirements.txt` |
+| **P1.6** | Create a `.env` file and store your App Password and API Key in it. | ✅ Completed | High | P1.3, P1.4 | Created in `.env.local` |
+
+---
+
+#### **Phase 2: Scripting & Core Logic**
+
+| Task ID | Task Description | Status | Priority | Dependency | Comments |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **P2.1** | Create the main Python script file | ✅ Completed | High | P1.5 | Created `main.py` |
+| **P2.2** | Write a function to load secrets from the `.env` file. | ✅ Completed | High | P1.6 |
+| **P2.3** | Write a function using Pandas to load `contacts.csv` into a DataFrame. | ✅ Completed | High | P1.1 |
+| **P2.4** | Implement the "Smart Salutation" function using LangChain and your LLM API key. | ✅ Completed | High | P1.4, P2.2 | Manually created the `FirstName` column in csv file and importing |
+| **P2.5** | Implement the `send_email` function using `smtplib` for sending mail with attachments in `outreach.py` | ✅ Completed | High | P1.2, P2.2 | Created in `outreach.py` |
+| **P2.6** | Build the main loop to iterate through the DataFrame. | ✅ Completed | Medium | P2.3 | 
+| **P2.7** | Add logic inside the loop to check the `Comments` column and skip if "Sent". | ✅ Completed | High | P2.6 |
+| **P2.8** | Add a `try...except` block for sending and updating the DataFrame with "Sent" or "Failed". | Not Started | High | P2.5, P2.7 |
+| **P2.9** | Add `time.sleep()` in the loop for rate limiting for 10 seconds | Not Started | High | P2.8 |
+| **P2.10** | Add the final line of code to save the updated DataFrame back to `contacts.csv`. | Not Started | High | P2.8 |
+
+---
+
+#### **Phase 3: Testing & Execution**
+
+| Task ID | Task Description | Status | Priority | Dependency | Comments |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **P3.1** | Create a `test_contacts.csv` with 2-3 of your personal emails for a dry run. | Not Started | High | P1.1 |
+| **P3.2** | Run the script on the test file to perform a full end-to-end test. | Not Started | High | P2.10, P3.1 |
+| **P3.3** | Verify email receipt, salutation, attachment, and that the test CSV is updated with "Sent". | Not Started | High | P3.2 |
+| **P3.4** | **(FINAL STEP)** Point the script to the real `contacts.csv` and execute. | Not Started | High | P3.3 |
+| **P3.5** | Monitor the execution. After completion, check the final `contacts.csv` file for status. | Not Started | Medium | P3.4 |
+</file>
+
+<file path="documentation/PRD.md">
+# **Process Requirement Document (PRD): Automated Personalized Cold Email Outreach System**
+
+**1. Project Overview**
+
+*   **Project Name:** AI-Powered Personalized Email Automation Engine
+*   **Problem:** Manually sending customized emails to a large list of HR contacts is time-consuming and inefficient. Free automation tools often include undesirable watermarks, which appear unprofessional to recruiters.
+*   **Goal:** To build a Python-based application that automatically sends personalized cold emails, with a resume attached, to a list of up to 600 HR contacts. The system will leverage Large Language Models (LLMs) via LangChain for personalization and standard Python libraries for email dispatch, ensuring no external watermarks.
+
+**2. Core Features**
+
+*   **F1: Bulk Data Ingestion:** The system must read a list of contacts from a structured file (e.g., CSV). This file will contain essential data for personalization, such as `FirstName`, `LastName`, `Company`, `JobTitle`, `EmailAddress`, and a `PersonalizationHook` (e.g., a recent company achievement or a relevant job opening).
+*   **F2: Dynamic Email Personalization:** For each contact, the system will use LangChain to generate a unique, human-like opening line or paragraph. This logic will take the `PersonalizationHook` and other data points from the input file to create relevant content.
+*   **F3: Resume Attachment:** The system must attach a specified resume file (e.g., a PDF) to every email it sends.
+*   **F4: Secure & Reliable Email Sending:** The application will use a standard SMTP (Simple Mail Transfer Protocol) provider (like Gmail or Outlook) to send emails. Credentials will be handled securely and not hardcoded into the script.
+*   **F5: Rate Limiting & Throttling:** To avoid being flagged as spam and having the email account blocked, the system must include a delay between sending emails (e.g., one email every 60-90 seconds).
+*   **F6: Logging and Error Handling:** The application will log its progress, recording which emails were sent successfully and which failed. This allows for tracking and resuming the process if it's interrupted.
+
+**3. Technical Stack**
+
+*   **Programming Language:** Python 3.9+
+*   **Core Libraries:**
+    *   **LangChain:** To orchestrate the interaction with the Language Model (LLM).
+    *   **LLM Provider:** An API from a service like OpenAI (GPT-3.5/GPT-4), Anthropic, or Google. An API key will be required.
+    *   **Pandas:** For reading and processing the HR contact list from a CSV file.
+    *   **SMTPLIB & Email:** Standard Python libraries for connecting to an email server and constructing the emails with attachments.
+    *   **Python-Dotenv:** To manage sensitive information like email passwords and API keys securely using a `.env` file.
+*   **Prototyping (Optional but Recommended):**
+    *   **LangFlow:** A graphical user interface (GUI) for LangChain. Excellent for visually designing and testing the personalization logic before writing the final Python script.
+*   **Advanced Orchestration (Optional):**
+    *   **LangGraph:** Could be used for more complex flows, such as handling different email templates based on HR seniority or automatically trying a different prompt if the first one fails. For this project's core goal, a simple Python loop is sufficient, but LangGraph offers a path for future expansion.
+
+**4. Project Phases & Steps**
+
+**Phase 1: Setup and Preparation (The Foundation)**
+1.  **Data Preparation:** Create a CSV file with the 600 HR contacts. Columns: `FirstName`, `LastName`, `Company`, `EmailAddress`, `PersonalizationHook`.
+2.  **Email Account Setup:** For the sending email address (e.g., a Gmail account), generate an "App Password". This is more secure than using your main password.
+3.  **LLM API Key:** Obtain an API key from your chosen LLM provider (e.g., OpenAI).
+4.  **Environment Setup:** Set up a Python virtual environment and install the required libraries. Create a `.env` file to securely store your App Password and LLM API Key.
+5.  **Base Content:** Write a generic version of your cold email template and finalize your resume PDF.
+
+**Phase 2: Personalization Logic (The Brain)**
+1.  **Design in LangFlow:** Use LangFlow to visually build the personalization chain.
+    *   Input: `Company`, `FirstName`, `PersonalizationHook`.
+    *   Prompt Template: Create a template like: "You are a helpful assistant. Write a single, professional, and friendly opening sentence for a cold email to {FirstName} who works at {Company}. The email's goal is to seek a job opportunity. Mention this interesting fact about their company: {PersonalizationHook}."
+    *   LLM Node: Connect the prompt to your chosen LLM.
+2.  **Test & Refine:** Test the flow with a few examples from your CSV to ensure the output is high quality.
+3.  **Export:** Export the working LangFlow design as Python code. This will serve as the core logic for your script.
+
+**Phase 3: Application Scripting (The Body)**
+1.  **Main Script:** Create a `main.py` file.
+2.  **Integrate LangChain Logic:** Copy the exported code from LangFlow into a function in your script.
+3.  **Build Data Loader:** Write a function using Pandas to read the CSV file into a list of dictionaries.
+4.  **Build Email Sender:** Write a function that takes recipient details, a subject line, body text, and a file path for an attachment. This function will use `smtplib` to connect, authenticate, and send the email.
+5.  **Create Main Loop:** Write the main execution block that iterates through each contact from the CSV, calls the LangChain function to generate personalized content, constructs the full email body, and then calls the email sender function.
+6.  **Implement Safeguards:** Add `time.sleep()` inside the loop for rate limiting and implement `try...except` blocks for robust error handling and logging.
+
+**Phase 4: Testing and Execution (The Launch)**
+1.  **Dry Run:** Test the entire script with a small batch of 2-3 of your own email addresses to verify formatting, personalization, and attachment delivery.
+2.  **Live Execution:** Once testing is successful, run the script on the full list of 600 contacts. Monitor the console output for logs.
+3.  **Review:** After the script completes, check the log file for any failed sends and address them manually if necessary.
+
+***
+
+### **Project TODO List: AI-Powered Email Automation**
+
+#### **Phase 1: Setup & Preparation**
+This phase is about gathering all your assets and setting up the technical foundation for the project.
+
+| Task ID | Task Description | Status | Priority | Dependency |
+| :--- | :--- | :--- | :--- | :--- |
+| **P1.1** | Create the master HR contact list in a CSV file with all required columns. | Not Started | High | - |
+| **P1.2** | Write the base template for the cold email. | Not Started | High | - |
+| **P1.3** | Finalize the resume and save it as a PDF file (e.g., `resume.pdf`). | Not Started | High | - |
+| **P1.4** | For your sending email (e.g., Gmail), generate a secure "App Password". | Not Started | High | - |
+| **P1.5** | Sign up for an LLM provider (e.g., OpenAI) and get an API key. | Not Started | High | - |
+| **P1.6** | Set up a local Python virtual environment for the project. | Not Started | High | - |
+| **P1.7** | Install necessary libraries: `langchain`, `openai`, `pandas`, `python-dotenv`. | Not Started | Medium | P1.6 |
+| **P1.8** | Create a `.env` file and store the App Password and API Key in it. | Not Started | High | P1.4, P1.5 |
+
+---
+
+#### **Phase 2: Personalization Logic**
+This phase focuses on designing and testing the "brain" of the operation—the AI-powered content generation.
+
+| Task ID | Task Description | Status | Priority | Dependency |
+| :--- | :--- | :--- | :--- | :--- |
+| **P2.1** | Install and launch LangFlow. | Not Started | Medium | P1.6 |
+| **P2.2** | Design the Prompt Template for email personalization within LangFlow. | Not Started | High | P1.2 |
+| **P2.3** | Connect the prompt to an LLM node in LangFlow using your API key. | Not Started | High | P1.5, P2.2 |
+| **P2.4** | Test the LangFlow chain with sample data from your CSV to verify output quality. | Not Started | High | P1.1, P2.3 |
+| **P2.5** | Export the final, working LangFlow chain as Python code. | Not Started | Medium | P2.4 |
+
+---
+
+#### **Phase 3: Application Scripting**
+In this phase, you will write the Python script that brings all the components together to perform the automation.
+
+| Task ID | Task Description | Status | Priority | Dependency |
+| :--- | :--- | :--- | :--- | :--- |
+| **P3.1** | Create the main project script file (e.g., `send_emails.py`). | Not Started | High | - |
+| **P3.2** | Write a function to load secrets (keys, passwords) from the `.env` file. | Not Started | High | P1.8 |
+| **P3.3** | Write a function to read and parse the HR contacts CSV using Pandas. | Not Started | Medium | P1.1 |
+| **P3.4** | Integrate the exported LangFlow code into a personalization function. | Not Started | High | P2.5 |
+| **P3.5** | Write the core `send_email` function using `smtplib` to handle connection, auth, and sending with attachments. | Not Started | High | P1.3, P3.2 |
+| **P3.6** | Create the main loop to iterate through contacts from the CSV. | Not Started | High | P3.3 |
+| **P3.7** | Inside the loop, call the personalization and email sending functions. | Not Started | High | P3.4, P3.5, P3.6 |
+| **P3.8** | Implement rate limiting in the loop using `time.sleep(SECONDS)`. | Not Started | High | P3.7 |
+| **P3.9** | Add logging to a file (`log.txt`) for successes and failures. | Not Started | Medium | P3.7 |
+
+---
+
+#### **Phase 4: Testing & Execution**
+The final phase involves testing your application thoroughly before running it on your full contact list.
+
+| Task ID | Task Description | Status | Priority | Dependency |
+| :--- | :--- | :--- | :--- | :--- |
+| **P4.1** | Create a smaller test CSV with 2-3 of your own email addresses. | Not Started | High | P1.1 |
+| **P4.2** | Run the script with the test CSV to perform a full end-to-end test. | Not Started | High | P3.9, P4.1 |
+| **P4.3** | Verify you received the emails, the personalization is correct, and the resume is attached. | Not Started | High | P4.2 |
+| **P4.4** | **(FINAL STEP)** Point the script to the full 600-contact CSV and execute. | Not Started | High | P4.3 |
+| **P4.5** | Monitor the execution logs. After completion, review the log file for any errors. | Not Started | Medium | P4.4 |
+</file>
+
+<file path="main.py">
+import os
+from dotenv import load_dotenv
+import pandas as pd
+from outreach import send_bulk_emails
+
+# --- P2.2: Load secrets from the .env file ---
+load_dotenv(dotenv_path=".env.local")
+
+EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
+APP_PASSWORD = os.getenv("APP_PASSWORD")
+
+# --- P2.3: Load contacts.csv into a DataFrame ---
+contacts_path = "emails/contacts.csv"
+df = pd.read_csv(contacts_path)
+
+# Ensure 'Comments' column exists
+if "Comments" not in df.columns:
+    df["Comments"] = ""
+
+print()
+print("-------------------------------------------")
+print("Welcome to Mail Automation Pro Ultra Max 🔥")
+print("-------------------------------------------")
+print()
+
+# --- Get salutation from FirstName column ---
+def get_smart_salutation(row) -> str:
+    """
+    Returns the first name from the row, or 'Team' if the first name is missing/empty.
+    """
+    first_name = str(row.get("FirstName", "")).strip()
+    return first_name if first_name else "Team"
+
+# Example usage:
+if __name__ == "__main__":
+    send_bulk_emails()
+</file>
+
+<file path="outreach.py">
+import os
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.mime.base import MIMEBase
+from email import encoders
+from dotenv import load_dotenv
+import pandas as pd
+from email.utils import formataddr
+import time
+
+# Load environment variables
+load_dotenv(dotenv_path=".env.local")
+
+def load_email_credentials():
+    """
+    Load email credentials from .env file
+    """
+    email_address = os.getenv("EMAIL_ADDRESS")
+    app_password = os.getenv("APP_PASSWORD")
+    
+    if not email_address or not app_password:
+        raise ValueError("EMAIL_ADDRESS and APP_PASSWORD must be set in .env.local file")
+    
+    return email_address, app_password
+
+def load_email_template():
+    """
+    Load the HTML email template and return it as a string
+    """
+    template_path = "content/email_template.html"
+    try:
+        with open(template_path, 'r', encoding='utf-8') as file:
+            return file.read()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Email template not found at {template_path}")
+
+def send_email(recipient_email: str, salutation: str, sender_email: str, app_password: str) -> bool:
+    """
+    Send an email with resume attachment using SMTP
+    
+    Args:
+        recipient_email: The email address to send to
+        salutation: The personalized salutation (e.g., "Adarsh" or "Team")
+        sender_email: The sender's email address
+        app_password: The app password for authentication
+    
+    Returns:
+        bool: True if email sent successfully, False otherwise
+    """
+    try:
+        # Create message container
+        msg = MIMEMultipart('alternative')
+        msg['From'] = formataddr(("Adarsh Anand", sender_email))
+        msg['To'] = recipient_email
+        msg['Subject'] = "Adarsh Anand | Full Stack Developer | Resume"
+        
+        # Load and personalize email template
+        template = load_email_template()
+        personalized_content = template.replace("{{name}}", salutation)
+        
+        # Attach HTML content
+        html_part = MIMEText(personalized_content, 'html')
+        msg.attach(html_part)
+        
+        # Attach resume PDF
+        resume_path = "content/AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf"
+        if os.path.exists(resume_path):
+            with open(resume_path, "rb") as attachment:
+                part = MIMEBase('application', 'octet-stream')
+                part.set_payload(attachment.read())
+            
+            encoders.encode_base64(part)
+            part.add_header(
+                'Content-Disposition',
+                f'attachment; filename=AdarshAnand__Full_Stack_AI_Engineer__Resume.pdf'
+            )
+            msg.attach(part)
+        else:
+            print(f"Warning: Resume file not found at {resume_path}")
+        
+        # Send email using Gmail SMTP
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, app_password)
+        
+        text = msg.as_string()
+        server.sendmail(sender_email, recipient_email, text)
+        server.quit()
+        
+        print(f"✅ Email sent successfully to {recipient_email}")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Failed to send email to {recipient_email}: {str(e)}")
+        return False
+
+def test_email_sending():
+    """
+    Test function to verify email sending works
+    """
+    try:
+        # Load credentials
+        sender_email, app_password = load_email_credentials()
+        
+        # Test with first contact from CSV
+        contacts_path = "emails/contacts.csv"
+        df = pd.read_csv(contacts_path)
+        
+        if len(df) > 0:
+            first_row = df.iloc[0]
+            recipient_email = first_row["EmailAddress"]
+            salutation = first_row.get("FirstName", "Team")
+            
+            print(f"Testing email sending to: {recipient_email}")
+            print(f"Using salutation: {salutation}")
+            
+            # Send test email
+            success = send_email(recipient_email, salutation, sender_email, app_password)
+            
+            if success:
+                print("🎉 Email test successful!")
+            else:
+                print("💥 Email test failed!")
+        else:
+            print("No contacts found in CSV file")
+            
+    except Exception as e:
+        print(f"Error during email test: {str(e)}")
+
+def send_bulk_emails(contacts_path="emails/contacts.csv"):
+    """
+    Iterate through the DataFrame, send emails to contacts not marked as 'Sent',
+    and update the Comments column accordingly.
+    Implements P2.8, P2.9, P2.10 from PRD.
+    """
+    sender_email, app_password = load_email_credentials()
+    df = pd.read_csv(contacts_path)
+    # Ensure Comments column is of type object (string)
+    df["Comments"] = df["Comments"].astype("object")
+    updated = False
+    for idx, row in df.iterrows():
+        # P2.7: Skip if already sent
+        if str(row.get("Comments", "")).strip().lower() == "sent":
+            print(f"Skipping {row['EmailAddress']} (already sent)")
+            continue
+        recipient_email = str(row["EmailAddress"])
+        first_name = row.get("FirstName", "")
+        # Use the value from FirstName if present, otherwise use empty string
+        if isinstance(first_name, str):
+            salutation = first_name.strip()
+        elif pd.isna(first_name) == True:
+            salutation = ""
+        else:
+            salutation = str(first_name).strip()
+        print(f"Sending to {recipient_email} with salutation '{salutation}'...")
+        try:
+            success = send_email(recipient_email, salutation, sender_email, app_password)
+            if success:
+                df.at[idx, "Comments"] = "Sent"
+            else:
+                df.at[idx, "Comments"] = "Failed"
+            updated = True
+        except Exception as e:
+            print(f"Exception for {recipient_email}: {e}")
+            df.at[idx, "Comments"] = "Failed"
+            updated = True
+        # P2.9: Rate limiting
+        print("Waiting 10 seconds before next email...")
+        time.sleep(10)
+    # P2.10: Save DataFrame
+    if updated:
+        df.to_csv(contacts_path, index=False)
+        print(f"Updated contacts saved to {contacts_path}")
+        print()
+        print("Thanks for using - Mail Automation Pro Ultra Max 🔥")
+        print()
+    else:
+        print("No updates made to contacts file.")
+        print()
+        print("Thanks for using - Mail Automation Pro Ultra Max 🔥")
+        print()
+
+if __name__ == "__main__":
+    # Run email sending test
+    test_email_sending()
+</file>
+
+<file path="readme.md">
+## Install `requirements.txt` 
+
+```python
+pip install -r requirements.txt
+```
+</file>
+
+<file path="requirements.txt">
+pandas
+langchain
+langsmith
+langchain[google-genai]
+python-dotenv
+openpyxl
+odfpy
+</file>
+
+</files>
